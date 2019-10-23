@@ -5,6 +5,10 @@ export class Greeter {
         setTimeout(
             () => this.arriving = false, 5000);
     }
+
+    attached() {
+        this.hasFocus = true;
+    }
 }
 
 

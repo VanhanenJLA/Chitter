@@ -1,0 +1,6 @@
+<template>
+    <form submit.trigger="parseBarcodeJSON(barcode)">
+        <p>Barcode field:</p>
+        <input id="barcodeField" type="text" focus.bind="hasFocus" value.bind="barcode">
+    </form>
+</template>
