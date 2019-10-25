@@ -30,7 +30,8 @@ export class Reader {
     }
 
     constructor() {
-        this.barcode = JSON.stringify(this.sampleJSON);
+        this.barcode = this.sampleJSON;
+        
     }
 
     attached() {
