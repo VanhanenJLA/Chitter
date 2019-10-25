@@ -8,7 +8,7 @@ export class LoadingIndicator {
   @bindable loading = false;
 
   constructor() {
-    nprogress.configure({ showSpinner: false });
+    nprogress.configure({ showSpinner: true });
   }
 
   loadingChanged(newValue) {

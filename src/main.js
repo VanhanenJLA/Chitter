@@ -5,7 +5,7 @@ import 'regenerator-runtime/runtime';
 //#region Styling imports
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './static/pesmel.css';
+// import './static/pesmel.css';
 //#endregion
 
 import { PLATFORM } from 'aurelia-pal';
@@ -16,11 +16,13 @@ export function configure(aurelia) {
         .standardConfiguration()
         .feature(PLATFORM.moduleName('resources/index'));
 
+
     aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
 
     if (environment.testing) {
         aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
     }
 
-    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    // aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('login')));
+    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('./pages/login/login')));
 }
