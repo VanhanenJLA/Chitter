@@ -2,20 +2,24 @@ import { Aurelia } from "aurelia-framework";
 
 export class LoginService {
 
-    _users = new [new User("admin", "admin")];
+    _users = new [];
 
-    Login(username, password) {
+    constructor() {
+        this._users.
+    }
 
-        _users.forEach(user => {
-            if (user.username === username) {
-                if (user.password === password) {
-                    alert("Success!");
-                } else {
-                    alert("Wrong password!");
-                }
-            }
-            alert("User not found!");
-        });
+    login(username, password) {
+        
+        // _users.forEach(user => {
+        //     if (user.username === username) {
+        //         if (user.password === password) {
+        //             alert("Success!");
+        //         } else {
+        //             alert("Wrong password!");
+        //         }
+        //     }
+        //     alert("User not found!");
+        // });
 
     }
 

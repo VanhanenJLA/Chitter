@@ -4,7 +4,7 @@
     <require from="../../static/login/bootstrap.min.css"></require>
     <require from="../../static/login/floating-labels.css"></require>
 
-    <form class="form-signin" submit.trigger="login()">
+    <form class="form-signin" submit.trigger="login(username, password)">
 
         <div class="text-center mb-4">
             <img class="mb-4" src="../../static/login/bootstrap-solid.svg" alt="" width="128" height="128">
@@ -12,12 +12,14 @@
         </div>
 
         <div class="form-label-group">
-            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
+            <input value.bind="username" type="text" id="inputUsername" class="form-control" placeholder="Username"
+                required="" autofocus="">
             <label for="inputUsername">Username</label>
         </div>
 
         <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <input value.bind="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
+                required="">
             <label for="inputPassword">Password</label>
         </div>
 

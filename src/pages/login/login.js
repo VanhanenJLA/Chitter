@@ -4,19 +4,16 @@ import { LoginService } from "./login-service";
 @inject(Aurelia)
 export class Login {
 
-    constructor(Aurelia) {
+    constructor(Aurelia, LoginService) {
         this.aurelia = Aurelia;
-        //this.loginService = loginService;
+        this.loginService = LoginService;
     }
 
-    Login(username, password) {
+    login(username, password) {
+        alert(`${username} ${password}`);
         // this.loginService.Login(username, password);
-        // this.aurelia.setRoot(PLATFORM.moduleName('app'));
-        alert("Hello");
-    }
-
-    Login() {
-        alert("Hello");
+        if (username && password)
+            this.aurelia.setRoot(PLATFORM.moduleName('app'));
     }
 
 }
