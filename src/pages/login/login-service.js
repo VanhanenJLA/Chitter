@@ -4,10 +4,6 @@ export class LoginService {
 
     _users = new [new User("admin", "admin")];
 
-    constructor() {
-
-    }
-
     Login(username, password) {
 
         _users.forEach(user => {
