@@ -1,6 +1,30 @@
 <template>
-    <form submit.trigger="parseBarcodeJSON(barcode)">
-        <p>Barcode field:</p>
-        <input id="barcodeField" type="text" focus.bind="hasFocus" value.bind="barcode">
-    </form>
+    <require from="./components/data-display.html"></require>
+    <require from="./components/data-input/data-input"></require>
+
+
+    <div class="container">
+        <data-input></data-input>
+    </div>
+    
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                Infeed data
+            </div>
+
+            <div class="card-body">
+                <data-display></data-display>
+                <p class="card-text">Kortin tekstikenttä.</p>
+            </div>
+
+            <div class="card-footer text-muted">
+                <p>Sample tekstiä.</p>
+                <a href="#"
+                   class="btn btn-primary">Do things</a>
+            </div>
+
+        </div>
+    </div>
+
 </template>
