@@ -2,6 +2,12 @@ import { Aurelia } from "aurelia-framework";
 
 export class LoginService {
 
+    _users = new [];
+
+    constructor() {
+        this._users.
+    }
+
     login(username, password) {
         
         // _users.forEach(user => {

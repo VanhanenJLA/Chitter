@@ -4,52 +4,32 @@
     <require from="../../static/login/bootstrap.min.css"></require>
     <require from="../../static/login/floating-labels.css"></require>
 
-    <form class="form-signin"
-          submit.trigger="login(username, password)">
+    <form class="form-signin" submit.trigger="login(username, password)">
 
         <div class="text-center mb-4">
-            <img class="mb-4"
-                 src="../../static/login/bootstrap-solid.svg"
-                 alt=""
-                 width="128"
-                 height="128">
+            <img class="mb-4" src="../../static/login/bootstrap-solid.svg" alt="" width="128" height="128">
             <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
         </div>
 
         <div class="form-label-group">
-            <input value.bind="username"
-                   type="text"
-                   id="inputUsername"
-                   class="form-control"
-                   placeholder="Username"
-                   required=""
-                   autofocus="">
+            <input value.bind="username" type="text" id="inputUsername" class="form-control" placeholder="Username"
+                required="" autofocus="">
             <label for="inputUsername">Username</label>
         </div>
 
         <div class="form-label-group">
-            <input value.bind="password"
-                   type="password"
-                   id="inputPassword"
-                   class="form-control"
-                   placeholder="Password"
-                   required="">
+            <input value.bind="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
+                required="">
             <label for="inputPassword">Password</label>
-            <small id="passwordHelpInline"
-                   class="text-muted">
-                Must be 8-20 characters long.
-            </small>
         </div>
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox"
-                       value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-block"
-                type=submit>Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type=submit>Sign in</button>
 
         <p class="mt-5 mb-3 text-muted text-center">
             © <a href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">Origin</a> 2017 - 2019
