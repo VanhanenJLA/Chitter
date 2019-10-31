@@ -12,9 +12,8 @@ export class App {
         config.title = "Testeroni";
         config.map([
 
-            { route: '', moduleId: PLATFORM.moduleName('./pages/reader/reader'), title: "Reader", nav: true },
+            { route: '', moduleId: PLATFORM.moduleName('./pages/infeed/infeed'), title: "Infeed", nav: true },
             { route: 'greet', moduleId: PLATFORM.moduleName('./pages/greeter/greeter'), title: "Greeter", nav: true },
-            { route: 'hello', name: 'hello', moduleId: PLATFORM.moduleName('./pages/hello/hello'), title: "Hello", nav: true },
 
         ]);
 

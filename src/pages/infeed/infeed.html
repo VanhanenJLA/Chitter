@@ -1,0 +1,34 @@
+<template>
+    <!-- Components -->
+    <require from="./components/barcode-display/barcode-display"></require>
+    <require from="./components/barcode-input/barcode-input"></require>
+
+    <!-- Converters -->
+    <require from="../../resources/value-converters/ObjectKeysValueConverter"></require>
+    <require from="../../resources/value-converters/ObjectValuesValueConverter"></require>
+    <require from="../../resources/value-converters/ObjectEntriesValueConverter"></require>
+
+    <div class="container">
+        <barcode-input barcode.two-way="barcode">
+        </barcode-input>
+    </div>
+
+    <div class="container">
+        <div class="card text-center">
+
+            <div class="card-header">
+                Infeed barcode data
+            </div>
+
+            <div class="card-body">
+                <barcode-display barcode.two-way="barcode"></barcode-display>
+            </div>
+
+            <div class="card-footer text-muted">
+                <p>Footer</p>
+            </div>
+
+        </div>
+    </div>
+
+</template>
