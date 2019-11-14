@@ -5,6 +5,7 @@ import { LoginService } from "./login-service";
 export class Login {
 
     _rememberMe = true;
+    // _rememberMe = false;
 
     constructor(Aurelia, LoginService) {
         this.aurelia = Aurelia;

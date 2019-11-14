@@ -1,14 +1,21 @@
 <template binding="router">
 
+    <require from="./resources/elements/jumbotron-header.html"></require>
     <require from="./resources/elements/nav-bar.html"></require>
+    <require from="./resources/elements/sticky-footer.html"></require>
     <require from="./resources/elements/loading-indicator"></require>
 
+    <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
+    </loading-indicator>
 
-    <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
     <nav-bar router.bind="router"></nav-bar>
 
-    <div class="page-host">
+    <jumbotron-header></jumbotron-header>
+
+    <div class="container-fluid">
         <router-view></router-view>
     </div>
+
+    <sticky-footer></sticky-footer>
 
 </template>

@@ -2,11 +2,8 @@
 // If you don't use async/await, you can remove regenerator-runtime.
 import 'regenerator-runtime/runtime';
 
-//#region Styling imports
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './static/pesmel.css';
-//#endregion
 
 import { PLATFORM } from 'aurelia-pal';
 import * as environment from '../config/environment.json';
@@ -22,6 +19,7 @@ export function configure(aurelia) {
         aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
     }
 
-    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('pages/login/login')));
-    // aurelia.start().then(() => aurelia.setRoot());
+    // aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('pages/login/login')));
+    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    
 }

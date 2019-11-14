@@ -1,22 +1,30 @@
 <template>
-    <div>
 
-        <label for="nameField">
-            Who to greet?
-        </label>
-        <input type="text" value.bind="name" id="nameField">
-        <br>
+    <div class="container" style="align-content: flex-end;">
 
-        <label for="arrivingBox">
-            Arriving?
-        </label>
-        <input type="checkbox" checked.bind="arriving" id="arrivingBox">
-        <br>
+        <div>
+            <label for="nameField">
+                Who to greet?
+            </label>
+            <input type="text"
+            value.bind="name"
+            id="nameField">
+            <br>
+            
+            <label for="arrivingBox">
+                Arriving?
+            </label>
+            <input type="checkbox"
+            checked.bind="arriving"
+            id="arrivingBox">
+            <br>
+            
+        </div>
+        
+        <p>
+            ${arriving ? 'Hello' : 'Goodbye'}, ${name}!
+        </p>
 
     </div>
-
-    <p>
-        ${arriving ? 'Hello' : 'Goodbye'}, ${name}!
-    </p>
-
+        
 </template>

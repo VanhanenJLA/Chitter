@@ -1,11 +1,16 @@
 <template bindable="router">
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top"
+
+    <require from="./search-bar.html"></require>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light"
          role="navigation">
+
         <a class="navbar-brand"
            href="#">
             <i class="fa fa-home"></i>
             <span>${router.title}</span>
         </a>
+
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -23,12 +28,25 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li class="loader"
-                    if.bind="router.isNavigating">
-                    <i class="fa fa-spinner fa-spin fa-2x"></i>
-                </li>
-            </ul>
+            <div class="navbar-nav px-3">
+                <button class="btn"
+                        style="background:transparent;"
+                        click.trigger="user()"
+                        title="User account"><i
+                       class="fa fa-user-circle-o">Jouni</i></button>
+            </div>
+
+            <div class="navbar-nav px-3">
+                <button class="btn"
+                        click.trigger="logout()"
+                        title="Logout"><i
+                       class="fa fa-sign-out">Logout</i></button>
+            </div>
+
+            <search-bar></search-bar>
+
         </div>
+
     </nav>
+
 </template>
