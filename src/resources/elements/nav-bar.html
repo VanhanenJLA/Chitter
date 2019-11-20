@@ -14,12 +14,12 @@
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
-                data-target="#skeleton-navigation-navbar">
+                data-target="navigation-navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse"
-             id="skeleton-navigation-navbar">
+             id="navigation-navbar">
             <ul class="navbar-nav mr-auto">
                 <li repeat.for="row of router.navigation"
                     class="nav-item ${row.isActive ? 'active' : ''}">
@@ -32,8 +32,9 @@
                 <button class="btn"
                         style="background:transparent;"
                         click.trigger="user()"
-                        title="User account"><i
-                       class="fa fa-user-circle-o">Jouni</i></button>
+                        title="User account">
+                    <i class="fa fa-user-circle-o">Jouni</i>
+                </button>
             </div>
 
             <div class="navbar-nav px-3">
