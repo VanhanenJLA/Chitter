@@ -1,3 +1,19 @@
 <template>
+    <require from="./tweet/tweet"></require>
+    <require from="./profile/profile"></require>
+
+    <div class="row">
+        
+        <sidebar class="col-md-4"
+                 style="background-color: aquamarine;">
+            <profile></profile>
+        </sidebar>
+
+        <timeline class="col-md-8"
+                  style="background-color: aqua;">
+            <tweet repeat.for="i of 4"></tweet>
+        </timeline>
+
+    </div>
 
 </template>

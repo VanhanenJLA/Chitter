@@ -9,7 +9,7 @@ export class App {
 
     configureRouter(config, router) {
         this.router = router;
-        config.title = "Testeroni";
+        config.title = "Twitteroni";
         config.map([
 
             { route: '', moduleId: PLATFORM.moduleName('./pages/greeter/greeter'), title: "Greetings", nav: false },

@@ -5,18 +5,15 @@
     <require from="./resources/elements/sticky-footer.html"></require>
     <require from="./resources/elements/loading-indicator"></require>
 
-        <loading-indicator
-                           loading.bind="router.isNavigating || api.isRequesting">
-        </loading-indicator>
+    <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
+    </loading-indicator>
 
-        <nav-bar router.bind="router"></nav-bar>
+    <nav-bar router.bind="router"></nav-bar>
 
-        <jumbotron-header></jumbotron-header>
+    <jumbotron-header></jumbotron-header>
 
-        <div class="container-fluid">
-            <router-view></router-view>
-        </div>
+    <router-view class="container"></router-view>
 
-        <sticky-footer></sticky-footer>
+    <sticky-footer></sticky-footer>
 
 </template>

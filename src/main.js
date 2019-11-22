@@ -4,6 +4,7 @@ import 'regenerator-runtime/runtime';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './static/styles.css';
 
 import { PLATFORM } from 'aurelia-pal';
 import * as environment from '../config/environment.json';
