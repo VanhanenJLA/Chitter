@@ -1,44 +1,28 @@
 <template>
 
+    <require from="./components/tweet-button-row.html"></require>
+    <require from="./components/tweet-content.html"></require>
+    <require from="./components/tweet-header.html"></require>
+
     <div class="row">
 
-        <div class="col-sm-2"
-             style="justify-items: auto;">
+        <div class="col-sm-2">
             <img class="img-fluid rounded-circle"
-                 src="./profile.png">
+                 src="../../../static/profile.png">
         </div>
 
         <div class="col-md-10">
 
-            <div class="row">
-                <div class="col">
-                    <span>Full name</span>
-                </div>
-                <div class="col">
-                    <span>@Handle</span>
-                </div>
-                <div class="col">
-                    <span>Time</span>
-                </div>
-            </div>
+            <tweet-header fullname="Full Name"
+                          handle="@Handle"
+                          time="2h">
+            </tweet-header>
 
-            <div class="row">
-                <div class="col">
-                    <span>${content}</span>
-                </div>
-            </div>
+            <tweet-content content="${content}"></tweet-content>
 
-            <div class="row">
-                <div class="col"
-                     style="justify-items: auto;">
-                    <button>Comment</button>
-                    <button>Share</button>
-                    <button>Heart</button>
-                </div>
-            </div>
+            <tweet-button-row></tweet-button-row>
 
         </div>
     </div>
-
 
 </template>
