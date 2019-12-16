@@ -1,14 +1,29 @@
 <template bindable="fullname, handle, time">
 
+    <style>
+        .tweet-profile-picture {
+            height: 50px;
+            min-height: 50px;
+            width: 50px;
+            min-width: 50px;
+        }
+    </style>
+
     <div class="row">
+
+        <div class="col-sm-2">
+            <img class="img-fluid rounded-circle tweet-profile-picture"
+                 src="../../../../static/profile.png">
+        </div>
+
         <div class="col">
             <span>${fullname}</span>
         </div>
         <div class="col">
-            <span>${handle}</span>
+            <span class="text-muted">${handle}</span>
         </div>
         <div class="col">
-            <span>${time}</span>
+            <span class="text-muted">${time}</span>
         </div>
     </div>
 

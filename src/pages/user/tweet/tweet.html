@@ -4,25 +4,22 @@
     <require from="./components/tweet-content.html"></require>
     <require from="./components/tweet-header.html"></require>
 
-    <div class="row">
+    <div class="card">
 
-        <div class="col-sm-2">
-            <img class="img-fluid rounded-circle"
-                 src="../../../static/profile.png">
-        </div>
+        <tweet-header class="card-header"
+                      fullname.bind="author.fullname"
+                      handle.bind="author.handle"
+                      class="card-header"
+                      time="2h"></tweet-header>
+        </tweet-header>
 
-        <div class="col-md-10">
+        <tweet-content content="${content}"
+                       class="card-body">
+        </tweet-content>
 
-            <tweet-header fullname="Full Name"
-                          handle="@Handle"
-                          time="2h">
-            </tweet-header>
+        <tweet-button-row class="card-body"></tweet-button-row>
 
-            <tweet-content content="${content}"></tweet-content>
-
-            <tweet-button-row></tweet-button-row>
-
-        </div>
     </div>
+    <br>
 
 </template>
