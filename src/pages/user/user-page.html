@@ -1,0 +1,27 @@
+<template>
+
+    <require from="./tweet/tweet"></require>
+    <require from="./profile/profile.html"></require>
+
+    <style>
+        sidebar {
+            background-color: aqua;
+        }
+        timeline {
+            background-color: aquamarine;
+        }
+    </style>
+
+    <div class="row">
+
+        <sidebar class="col-md-4">
+            <profile user.bind="user"></profile>
+        </sidebar>
+
+        <timeline class="col-md-8">
+            <tweet author.bind="user" repeat.for="i of 6"></tweet>
+        </timeline>
+
+    </div>
+
+</template>
