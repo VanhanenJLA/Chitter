@@ -1,20 +1,27 @@
-<template>
+<template bindable="user">
+
     <div class="col">
 
+        <!-- Profile picture -->
         <div class="row">
             <img class="img-fluid rounded-circle"
                  src="../../../static/profile.png">
         </div>
 
+        <!-- Details -->
         <div class="row">
-            <h3>Full name</h2>
+            <h3>${user.fullname}</h3>
         </div>
         <div class="row">
-            <span>@Handle</span>
+            <span class="text-muted">@${user.handle}</span>
         </div>
         <div class="row">
-            <span>${bio}</span>
+            <span>${user.bio}</span>
         </div>
+
+        <!-- Photorail -->
+        <!-- Images -->
+
     </div>
 
 </template>
