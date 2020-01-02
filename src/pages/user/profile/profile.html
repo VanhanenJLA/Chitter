@@ -1,5 +1,8 @@
 <template bindable="user">
 
+    <require from="./profile-details.html"></require>
+    <require from="./photo-rail.html"></require>
+
     <div class="col">
 
         <!-- Profile picture -->
@@ -7,20 +10,12 @@
             <img class="img-fluid rounded-circle"
                  src="../../../static/profile.png">
         </div>
+        <br>
 
         <!-- Details -->
-        <div class="row">
-            <h3>${user.fullname}</h3>
-        </div>
-        <div class="row">
-            <span class="text-muted">@${user.handle}</span>
-        </div>
-        <div class="row">
-            <span>${user.bio}</span>
-        </div>
-
-        <!-- Photorail -->
-        <!-- Images -->
+        <profile-details user.bind="user"></profile-details>
+        <br>
+        <photo-rail style="justify-items: auto;"></photo-rail>
 
     </div>
 

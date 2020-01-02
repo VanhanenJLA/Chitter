@@ -1,21 +1,14 @@
-import { PLATFORM, inject, Aurelia } from 'aurelia-framework';
+import { PLATFORM} from 'aurelia-framework';
 
-@inject(Aurelia)
 export class App {
+  configureRouter(config, router) {
+    this.router = router;
+    config.title = 'Twitteroni';
+    config.map([
 
-    constructor(Aurelia) {
-        this.app = Aurelia;
-    }
+      { route: '', moduleId: PLATFORM.moduleName('./pages/user/user-page'), title: 'User', nav: false },
+      { route: 'user', moduleId: PLATFORM.moduleName('./pages/user/user-page'), title: 'User', nav: true }
 
-    configureRouter(config, router) {
-        this.router = router;
-        config.title = "Twitteroni";
-        config.map([
-
-            { route: '', moduleId: PLATFORM.moduleName('./pages/greeter/greeter'), title: "Greetings", nav: false },
-            { route: 'user', moduleId: PLATFORM.moduleName('./pages/user/user'), title: "User", nav: true },
-
-        ]);
-
-    }
+    ]);
+  }
 }

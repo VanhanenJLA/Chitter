@@ -7,6 +7,7 @@
         sidebar {
             background-color: aqua;
         }
+
         timeline {
             background-color: aquamarine;
         }
@@ -19,7 +20,8 @@
         </sidebar>
 
         <timeline class="col-md-8">
-            <tweet author.bind="user" repeat.for="i of 6"></tweet>
+            <tweet author.bind="user"
+                   repeat.for="i of 6"></tweet>
         </timeline>
 
     </div>

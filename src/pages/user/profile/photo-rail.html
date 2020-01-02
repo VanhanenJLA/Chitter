@@ -1,0 +1,21 @@
+<template>
+
+    <style>
+        .photo-rail-image {
+            max-height: 85px;
+            max-width: 85px;
+            margin: 3px;
+        }
+    </style>
+
+
+    <span>Photorail header</span>
+    <div class="d-flex justify-content-center row">
+        <img repeat.for="i of 6"
+             class="photo-rail-image img-fluid rounded"
+             src="../../../static/profile.png">
+    </div>
+
+
+
+</template>
