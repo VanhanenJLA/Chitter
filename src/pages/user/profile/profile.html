@@ -4,18 +4,17 @@
     <require from="./photo-rail.html"></require>
 
     <div class="col">
-
         <!-- Profile picture -->
-        <div class="row">
+        <div class="row justify-content-center">
             <img class="img-fluid rounded-circle"
-                 src="../../../static/profile.png">
+                 src.bind="user.profilePicture">
         </div>
         <br>
 
         <!-- Details -->
         <profile-details user.bind="user"></profile-details>
         <br>
-        <photo-rail style="justify-items: auto;"></photo-rail>
+        <photo-rail images.bind="user.pictures"></photo-rail>
 
     </div>
 

@@ -5,11 +5,8 @@
     <require from="./components/tweet-header.html"></require>
 
     <div class="card">
-
-        <tweet-header class="card-header"
-                      fullname.bind="author.fullname"
-                      handle.bind="author.handle"
-                      class="card-header"
+        <tweet-header class="card-header py-1"
+                      author.bind="author"
                       time="2h">
         </tweet-header>
 
@@ -17,7 +14,7 @@
                        class="card-body">
         </tweet-content>
 
-        <tweet-button-row class="card-body"></tweet-button-row>
+        <tweet-button-row class="card-body py-2"></tweet-button-row>
 
     </div>
     <br>
