@@ -13,17 +13,20 @@
         }
     </style> -->
 
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-        <sidebar class="col-md-4">
-            <profile user.bind="user"></profile>
-        </sidebar>
+            <sidebar class="col-md-4">
+                <profile user.bind="user"></profile>
+            </sidebar>
 
-        <timeline class="col-md-8">
-            <tweet author.bind="user"
-                   repeat.for="i of 6"></tweet>
-        </timeline>
+            <timeline class="col-md-8">
+                <tweet repeat.for="i of 6"
+                       author.bind="user">
+                </tweet>
+            </timeline>
 
+        </div>
     </div>
 
 </template>

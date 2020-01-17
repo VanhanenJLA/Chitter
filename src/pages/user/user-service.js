@@ -9,7 +9,8 @@ export class UserService {
       for (let i = 0; i < 5; i++) s += 'This is a bio btw. ';
       return s;
     })();
-    let profilePicture = ProfilePicture;
+    // let profilePicture = ProfilePicture;
+    let profilePicture = "https://www.thispersondoesnotexist.com/image";
     let pictures = (() => {
       let _pictures = [];
       for (let i = 0; i < 6; i++) _pictures[i] = profilePicture;

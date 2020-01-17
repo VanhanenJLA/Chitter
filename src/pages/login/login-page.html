@@ -1,0 +1,58 @@
+<template class="login">
+
+    <!-- <require from="./login-page"></require> -->
+    <require from="../../static/login/floating-labels.css"></require>
+
+    <form class="form-signin card"
+          submit.trigger="login(username, password)">
+
+        <div class="text-center mb-4">
+
+            <img class="mb-4"
+                 src.bind="loginBanner"
+                 width="380"
+                 height="80">
+            <!-- <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1> -->
+        </div>
+
+        <div class="form-label-group">
+            <input value.bind="username"
+                   type="text"
+                   id="inputUsername"
+                   class="form-control"
+                   placeholder="Username"
+                   required=""
+                   autofocus="">
+            <label for="inputUsername">Username</label>
+        </div>
+
+        <div class="form-label-group">
+            <input value.bind="password"
+                   type="password"
+                   id="inputPassword"
+                   class="form-control"
+                   placeholder="Password"
+                   required="">
+            <label for="inputPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox"
+                       value="remember-me"> Remember me
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block"
+                type=submit>Sign in
+        </button>
+
+        <p class="mt-5 mb-3 text-muted text-center">
+            © <a
+               href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">Origin</a>
+            2017 - 2019
+        </p>
+
+    </form>
+
+</template>

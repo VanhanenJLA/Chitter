@@ -8,12 +8,11 @@
         }
     </style>
 
-
-    <span>Photorail header</span>
-    <div class="d-flex justify-content-center row">
-        <img repeat.for="i of 6"
+    <span class="text-muted">${pictures.length} images in album</span>
+    <div class="d-flex justify-content-around row">
+        <img repeat.for="picture of pictures"
              class="photo-rail-image img-fluid rounded"
-             src="../../../static/profile.png">
+             src.bind="picture">
     </div>
 
 

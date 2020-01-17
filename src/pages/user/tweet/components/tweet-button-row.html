@@ -1,6 +1,9 @@
 <template>
 
     <require from="../../../../resources/elements/image-button.html"></require>
+    <require from="../../../../resources/elements/modal-dialog.html"></require>
+
+    <modal-dialog></modal-dialog>
 
     <div class="row">
         <div class="col-md-2"></div>
@@ -9,7 +12,8 @@
                 <image-button
                               image="https://img.icons8.com/windows/32/000000/send-comment.png">
                 </image-button>
-                <image-button
+                <image-button data-toggle="modal"
+                              data-target="#exampleModal"
                               image="https://img.icons8.com/windows/32/000000/retweet.png">
                 </image-button>
                 <image-button style="padding: 2px;"
