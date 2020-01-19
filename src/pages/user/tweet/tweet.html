@@ -1,8 +1,9 @@
-<template>
+<template bindable="author, comments">
 
     <require from="./components/tweet-button-row.html"></require>
     <require from="./components/tweet-content.html"></require>
     <require from="./components/tweet-header.html"></require>
+    <require from="./components/comment/comment"></require>
 
     <div class="card">
         <tweet-header class="card-header py-1"
@@ -17,6 +18,11 @@
         <tweet-button-row class="card-body py-2"></tweet-button-row>
 
     </div>
+
+    <div id="tweet-comments">
+        <comment author.bind="author" repeat.for="comment of comments"></comment>
+    </div>
+
     <br>
 
 </template>

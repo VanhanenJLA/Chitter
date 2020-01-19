@@ -1,19 +1,15 @@
 <template>
 
     <require from="../../../../resources/elements/image-button.html"></require>
-    <require from="../../../../resources/elements/modal-dialog.html"></require>
-
-    <modal-dialog></modal-dialog>
 
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col">
             <div class="row justify-content-end px-4">
-                <image-button
-                              image="https://img.icons8.com/windows/32/000000/send-comment.png">
+                <image-button image="https://img.icons8.com/windows/32/000000/send-comment.png">
                 </image-button>
                 <image-button data-toggle="modal"
-                              data-target="#exampleModal"
+                              data-target="#retweet-modal"
                               image="https://img.icons8.com/windows/32/000000/retweet.png">
                 </image-button>
                 <image-button style="padding: 2px;"
@@ -23,4 +19,41 @@
         </div>
     </div>
 
+    <retweet-modal>
+            <div class="modal fade"
+                 id="retweet-modal"
+                 tabindex="-1"
+                 role="dialog">
+                <div class="modal-dialog modal-dialog-centered"
+                     role="document">
+    
+                    <div class="modal-content">
+    
+                        <div class="modal-header">
+                            <h5 class="modal-title"
+                                id="retweet-modal-title">Retweet</h5>
+                            <button type="button"
+                                    class="close"
+                                    data-dismiss="modal">
+                            </button>
+                        </div>
+    
+                        <div class="modal-body">
+
+                        </div>
+    
+                        <div class="modal-footer">
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+                            <button type="button"
+                                    class="btn btn-primary">Retweet</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    </retweet-modal>
+
 </template>
+

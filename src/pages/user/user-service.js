@@ -1,4 +1,5 @@
 import ProfilePicture from '../../static/profile.png';
+
 export class UserService {
   createUser() {
     let firstname = 'Jouni';
@@ -18,6 +19,10 @@ export class UserService {
     })();
     return new UserDTO(firstname, lastname, handle, bio, profilePicture, pictures);
   }
+
+  createComment(author) {
+    return new CommentDTO(author, "This is a comment btw.");
+  }
 }
 
 class UserDTO {
@@ -30,4 +35,15 @@ class UserDTO {
     this.profilePicture = profilePicture;
     this.pictures = pictures;
   }
+}
+
+class CommentDTO {
+    constructor(author, content) {
+        this.author = author;
+        this.content = content;
+    }
+}
+
+class TweetDTO {
+
 }

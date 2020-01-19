@@ -9,9 +9,11 @@ export class UserPage {
     constructor(UserService) {
         this.userService = UserService;
         this.user = this.userService.createUser();
+        let comment = this.userService.createComment(this.user);
+        this.comments = [comment, comment, comment, comment];
     }
 
-    // attached() {
+        // attached() {
     //     fetch('https://www.character-generator.org.uk/bio/')
     //         .then(function (response) {
     //             // When the page is loaded convert it to text
