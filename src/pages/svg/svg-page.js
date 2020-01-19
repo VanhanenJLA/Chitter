@@ -12,12 +12,6 @@ export class SvgPage {
         this.zoomable.addEventListener('load', function() {
             svgPanZoom(this);
         });
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 05b71ca... Work dump
-=======
->>>>>>> f6e8439... Work dump
     }
 }
