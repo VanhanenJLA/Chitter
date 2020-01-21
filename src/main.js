@@ -3,7 +3,9 @@
 import 'regenerator-runtime/runtime';
 
 import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './static/bootstrap.min.css';
+// import './static/bootstrap-dark.min.css';
+import './static/theme-switch.css';
 import './static/style.css';
 
 import { PLATFORM } from 'aurelia-pal';
