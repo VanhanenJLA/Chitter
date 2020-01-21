@@ -15,12 +15,21 @@
                        class="card-body">
         </tweet-content>
 
-        <tweet-button-row class="card-body py-2"></tweet-button-row>
-
+        <tweet-button-row comment-clicked.call="commentClicked()"
+                          retweet-clicked.call="retweetClicked({ event: $event, data: $this})"
+                          class="card-body py-2">
+        </tweet-button-row>
     </div>
 
+    <comment if.bind="commenting"
+             id="comment-field"
+             author.bind="author">
+
+    </comment>
+
     <div id="tweet-comments">
-        <comment author.bind="author" repeat.for="comment of comments"></comment>
+        <comment author.bind="author"
+                 repeat.for="comment of comments"></comment>
     </div>
 
     <br>
