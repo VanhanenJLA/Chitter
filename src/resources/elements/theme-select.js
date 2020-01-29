@@ -4,8 +4,7 @@ export class ThemeSelect {
     themes = [
         {
             title: "Default",
-            url:
-                "./../../static/bootstrap.min.css"
+            url: "./../../static/bootstrap.min.css"
         },
         {
             title: "Cerulean",
@@ -93,6 +92,13 @@ export class ThemeSelect {
         }
     ];
 
+    constructor() {
+        let theme = localStorage.getItem('theme');
+        if (theme !== null) {
+            this.changeTheme(this.themes.find(e => e.title === theme));
+        }
+    }
+
     changeTheme(theme) {
         const head = document.getElementsByTagName("head")[0];
         const itemId = 'css-sheet';
@@ -108,5 +114,7 @@ export class ThemeSelect {
         } else {
             link.href = theme.url;
         }
+        localStorage.setItem('theme', theme.title);
     }
+
 }
