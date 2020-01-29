@@ -1,6 +1,7 @@
 <template bindable="router">
 
     <require from="./search-bar.html"></require>
+    <require from="./theme-select"></require>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light"
          role="navigation">
@@ -47,14 +48,7 @@
                 </button>
             </div>
 
-            <div class="theme-switch-wrapper navbar-nav px-3">
-                <label class="theme-switch"
-                       for="checkbox">
-                    <input type="checkbox"
-                           id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
+            <theme-select></theme-select>
 
             <search-bar></search-bar>
 
