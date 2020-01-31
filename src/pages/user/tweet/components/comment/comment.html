@@ -1,4 +1,4 @@
-<template bindable="comment">
+<template>
 
     <require from="./comment-header.html"></require>
 
@@ -9,14 +9,14 @@
         <div class="col">
 
             <div class="card">
+
                 <comment-header class="card-header py-1"
-                                author.bind="author"
+                                author.bind="$this.$parent.comment.author"
                                 time="2h">
                 </comment-header>
 
-
                 <div class="card-body">
-                    <span>${content}</span>
+                    <span>${$this.$parent.comment.content}</span>
                 </div>
 
             </div>

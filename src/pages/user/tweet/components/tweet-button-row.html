@@ -1,7 +1,6 @@
 <template bindable="commentClicked, retweetClicked">
 
     <require from="../../../../resources/elements/image-button.html"></require>
-    <require from="./retweet-modal.html"></require>
 
     <div class="row">
         <div class="col-2"></div>
@@ -9,12 +8,12 @@
             <div class="row justify-content-end px-4">
                 <image-button id="comment-button"
                               image="https://img.icons8.com/windows/32/000000/send-comment.png"
-                              click.delegate="commentClicked($event)">
+                              click.delegate="commentClicked({ event: $event, data: $this.$parent })">
                 </image-button>
                 <image-button id="retweet-button"
                               data-toggle="modal"
                               data-target="#retweet-modal"
-                              click.delegate="retweetClicked({ event: $event, data: $parent })"
+                              click.delegate="retweetClicked({ event: $event, data: $this.$parent })"
                               image="https://img.icons8.com/windows/32/000000/retweet.png">
                 </image-button>
                 <image-button id="like-button"
@@ -25,6 +24,6 @@
         </div>
     </div>
 
-    <retweet-modal>
+
 
 </template>

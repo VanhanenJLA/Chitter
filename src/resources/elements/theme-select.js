@@ -1,5 +1,6 @@
-
+    
 export class ThemeSelect {
+
 
     themes = [
         {
@@ -100,6 +101,8 @@ export class ThemeSelect {
     }
 
     changeTheme(theme) {
+        // if (localStorage.getItem('theme') === theme.title) return;
+
         const head = document.getElementsByTagName("head")[0];
         const itemId = 'css-sheet';
         let link = document.getElementById(itemId);
@@ -115,6 +118,7 @@ export class ThemeSelect {
             link.href = theme.url;
         }
         localStorage.setItem('theme', theme.title);
+        this.selectedTheme = theme;
     }
 
 }

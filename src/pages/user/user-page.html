@@ -2,16 +2,9 @@
 
     <require from="./tweet/tweet"></require>
     <require from="./profile/profile.html"></require>
+    <require from="./tweet/components/retweet-modal.html"></require>
 
-    <!-- <style>
-        sidebar {
-            background-color: aqua;
-        }
-
-        timeline {
-            background-color: aquamarine;
-        }
-    </style> -->
+    <retweet-modal tweet.bind="retweet"></retweet-modal>
 
     <div class="container">
         <div class="row">
@@ -21,7 +14,8 @@
             </sidebar>
 
             <timeline class="col-md-8">
-                <tweet repeat.for="i of 6"
+                <tweet repeat.for="i of 2"
+                       retweet.bind="retweet"
                        author.bind="user"
                        comments.bind="comments">
                 </tweet>

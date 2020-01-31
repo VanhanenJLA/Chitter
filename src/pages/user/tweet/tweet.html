@@ -3,7 +3,8 @@
     <require from="./components/tweet-button-row.html"></require>
     <require from="./components/tweet-content.html"></require>
     <require from="./components/tweet-header.html"></require>
-    <require from="./components/comment/comment"></require>
+    <require from="./components/comment/comment.html"></require>
+    <require from="./components/comment-field.html"></require>
 
     <div class="card">
         <tweet-header class="card-header py-1"
@@ -15,21 +16,21 @@
                        class="card-body">
         </tweet-content>
 
-        <tweet-button-row comment-clicked.call="commentClicked()"
-                          retweet-clicked.call="retweetClicked({ event: $event, data: $this})"
+        <tweet-button-row comment-clicked.call="commentClicked(event, data)"
+                          retweet-clicked.call="retweetClicked(event, data)"
                           class="card-body py-2">
         </tweet-button-row>
     </div>
 
-    <comment if.bind="commenting"
-             id="comment-field"
-             author.bind="author">
-
-    </comment>
+    <comment-field ref="commentField"
+                   if.bind="commenting"
+                   id="comment-field"
+                   author.bind="author"
+                   submit-comment.call="submitComment(event, data)">
+    </comment-field>
 
     <div id="tweet-comments">
-        <comment author.bind="author"
-                 repeat.for="comment of comments"></comment>
+        <comment repeat.for="comment of comments"></comment>
     </div>
 
     <br>
