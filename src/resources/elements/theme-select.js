@@ -1,6 +1,5 @@
-    
-export class ThemeSelect {
 
+export class ThemeSelect {
 
     themes = [
         {
@@ -94,10 +93,14 @@ export class ThemeSelect {
     ];
 
     constructor() {
+
         let theme = localStorage.getItem('theme');
         if (theme !== null) {
             this.changeTheme(this.themes.find(e => e.title === theme));
+        } else {
+            this.changeTheme(this.themes.find(e => e.title === 'Default'));
         }
+
     }
 
     changeTheme(theme) {

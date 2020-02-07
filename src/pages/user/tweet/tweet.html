@@ -1,7 +1,6 @@
 <template bindable="author, comments">
 
     <require from="./components/tweet-button-row.html"></require>
-    <require from="./components/tweet-content.html"></require>
     <require from="./components/tweet-header.html"></require>
     <require from="./components/comment/comment.html"></require>
     <require from="./components/comment-field.html"></require>
@@ -12,14 +11,21 @@
                       time="2h">
         </tweet-header>
 
-        <tweet-content content="${content}"
-                       class="card-body">
-        </tweet-content>
+        <div class="card-body">
+            <div class="col-2"></div>
+            <div class="col">
+                <span>${content}</span>
+            </div>
+        </div>
 
         <tweet-button-row comment-clicked.call="commentClicked(event, data)"
                           retweet-clicked.call="retweetClicked(event, data)"
                           class="card-body py-2">
         </tweet-button-row>
+    </div>
+
+    <div id="tweet-comments">
+        <comment repeat.for="comment of comments"></comment>
     </div>
 
     <comment-field ref="commentField"
@@ -28,10 +34,6 @@
                    author.bind="author"
                    submit-comment.call="submitComment(event, data)">
     </comment-field>
-
-    <div id="tweet-comments">
-        <comment repeat.for="comment of comments"></comment>
-    </div>
 
     <br>
 

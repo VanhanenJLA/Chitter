@@ -4,7 +4,8 @@ import LoginBanner from '../../static/login/placeholder-logo.png';
 
 @inject(Aurelia)
 export class LoginPage {
-    _rememberMe = true;
+    
+    // _rememberMe = true;
     // _rememberMe = false;
 
     constructor(Aurelia, LoginService) {
