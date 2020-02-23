@@ -14,10 +14,11 @@
             </sidebar>
 
             <timeline class="col-md-8">
-                <tweet repeat.for="i of 2"
-                       retweet.bind="retweet"
-                       author.bind="user"
-                       comments.bind="comments">
+                <tweet repeat.for="tweet of tweets"
+                       content.bind="tweet.content"
+                       author.bind="tweet.author"
+                       comments.bind="tweet.comments"
+                       retweet.bind="retweet">
                 </tweet>
             </timeline>
 

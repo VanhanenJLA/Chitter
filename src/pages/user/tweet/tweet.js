@@ -1,20 +1,18 @@
 import { bindable, inject } from 'aurelia-framework';
 import { UserService } from "./../user-service";
+import { AppState } from '../../../shared/app-state';
 
-@inject(UserService)
+@inject(UserService, AppState)
 export class Tweet {
+
     @bindable author;
+    @bindable content;
     @bindable comments
     @bindable retweet;
 
-    constructor(UserService) {
+    constructor(UserService, AppState) {
         this.userService = UserService;
         this.commenting = false;
-        this.content = (() => {
-            let str = 'This is content btw. ';
-            for (let i = 0; i < 3; ++i) str = str.concat(str);
-            return str;
-        })();
     }
 
     commentClicked(event, data) {
@@ -28,14 +26,17 @@ export class Tweet {
         console.log("Retweet clicked!");
         console.log(event);
         console.log(tweet);
-        this.retweet = this.userService.createTweet(tweet.author, tweet.content, tweet.comments);
+        this.retweet = this.userService
+            .createTweet(tweet.author, tweet.content, tweet.comments);
     }
 
     submitComment(event, comment) {
         console.log("Commented!")
         console.log(event);
         console.log(comment);
-        this.comments.push(this.userService.createComment(this.author, comment.content));
-        this.commenting = false;        
+        this.comments.push(this.userService
+            .createComment(this.author, comment.content));
+        this.commenting = false;
     }
+
 }

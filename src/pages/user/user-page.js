@@ -12,6 +12,11 @@ export class UserPage {
         this.user = this.userService.createUser();
         let comment = this.userService.createComment(this.user, "This is a comment btw.");
         this.comments = [comment, comment, comment, comment];
+
+        let tweet = this.userService.createTweet(this.user,
+            "This is content btw. This is content btw. This is content btw. ", this.comments);
+
+        this.tweets = [tweet, tweet];
     }
 
 }

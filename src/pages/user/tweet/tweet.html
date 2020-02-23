@@ -1,11 +1,13 @@
-<template bindable="author, comments">
+<template>
 
     <require from="./components/tweet-button-row.html"></require>
     <require from="./components/tweet-header.html"></require>
     <require from="./components/comment/comment.html"></require>
     <require from="./components/comment-field.html"></require>
+    <require from="../../../resources/valueConverters/inverse-lighting-mode"></require>
 
-    <div class="card">
+
+    <div class="card bg-${lightingMode} text-${lightingMode | inverseLightingMode}">
         <tweet-header class="card-header py-1"
                       author.bind="author"
                       time="2h">
