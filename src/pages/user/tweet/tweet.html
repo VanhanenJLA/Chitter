@@ -7,7 +7,7 @@
     <require from="../../../resources/valueConverters/inverse-lighting-mode"></require>
 
 
-    <div class="card bg-${lightingMode} text-${lightingMode | inverseLightingMode}">
+    <div class="card bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
         <tweet-header class="card-header py-1"
                       author.bind="author"
                       time="2h">
@@ -27,7 +27,7 @@
     </div>
 
     <div id="tweet-comments">
-        <comment repeat.for="comment of comments"></comment>
+        <comment lighting-mode.bind="sharedState.lightingMode" repeat.for="comment of comments"></comment>
     </div>
 
     <comment-field ref="commentField"

@@ -1,10 +1,12 @@
 import { PLATFORM, Aurelia, inject } from 'aurelia-framework';
+import { SharedState } from './shared/shared-state';
 
-@inject(Aurelia)
+@inject(Aurelia, SharedState)
 export class App {
 
-    constructor(Aurelia) {
-        this.aurelia = Aurelia;
+    constructor(aurelia, sharedState) {
+        this.aurelia = aurelia;
+        this.sharedState = sharedState;
     }
 
     configureRouter(config, router) {

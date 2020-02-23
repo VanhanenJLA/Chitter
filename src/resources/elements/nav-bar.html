@@ -2,6 +2,7 @@
 
     <require from="./search-bar.html"></require>
     <require from="./theme-select"></require>
+    <require from="./lighting-mode-toggle"></require>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light"
          role="navigation">
@@ -27,7 +28,7 @@
                     <a href.bind="row.href"
                        class="nav-link">${row.title}</a>
                 </li>
-            </ul>y
+            </ul>
 
             <div class="navbar-nav px-3">
                 <button class="btn"
@@ -48,7 +49,11 @@
                 </button>
             </div>
 
-            <theme-select></theme-select>
+            <lighting-mode-toggle></lighting-mode-toggle>
+
+            <div class="navbar-nav px-3">
+                <theme-select></theme-select>
+            </div>
 
             <search-bar></search-bar>
 

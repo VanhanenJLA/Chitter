@@ -4,15 +4,19 @@
     <require from="./resources/elements/nav-bar.html"></require>
     <require from="./resources/elements/sticky-footer.html"></require>
     <require from="./resources/elements/loading-indicator"></require>
+    <require from="./resources/valueConverters/inverse-lighting-mode"></require>
 
     <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
     </loading-indicator>
 
-    <nav-bar logout.call="logout()" themes.bind="themes" router.bind="router"></nav-bar>
+    <nav-bar logout.call="logout()"
+             toggle-lighting-mode.call="toggleLightingMode()"
+             router.bind="router"></nav-bar>
 
-    <jumbotron-header></jumbotron-header>
+    <jumbotron-header class="border"></jumbotron-header>
 
-    <router-view></router-view>
+    <router-view class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
+    </router-view>
 
     <sticky-footer></sticky-footer>
 

@@ -1,4 +1,4 @@
-<template>
+<template bindable="lightingMode">
 
     <require from="./comment-header.html"></require>
 
@@ -8,7 +8,7 @@
 
         <div class="col">
 
-            <div class="card">
+            <div class="card bg-${lightingMode}">
 
                 <comment-header class="card-header py-1"
                                 author.bind="$this.$parent.comment.author"
