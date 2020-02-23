@@ -1,14 +1,19 @@
 <template>
-    <div class="navbar-nav px-3">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Theme
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a repeat.for="theme of themes" class="dropdown-item ${theme == selectedTheme ? 'active' : ''}" href="#"
-                    click.delegate="changeTheme(theme)">${theme.title}</a>
-            </div>
-        </li>
-    </div>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           id="navbarDropdown"
+           role="button"
+           data-toggle="dropdown">
+            Theme
+        </a>
+        <div class="dropdown-menu">
+            <a repeat.for="theme of themes"
+               class="dropdown-item ${theme == selectedTheme ? 'active' : ''}"
+               href="#"
+               click.delegate="changeTheme(theme)">${theme.title}</a>
+        </div>
+    </li>
+
 </template>
