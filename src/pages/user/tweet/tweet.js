@@ -1,8 +1,7 @@
 import { bindable, inject } from 'aurelia-framework';
 import { UserService } from "./../user-service";
-import { AppState } from '../../../shared/app-state';
 
-@inject(UserService, AppState)
+@inject(UserService)
 export class Tweet {
 
     @bindable author;
@@ -10,7 +9,7 @@ export class Tweet {
     @bindable comments
     @bindable retweet;
 
-    constructor(UserService, AppState) {
+    constructor(UserService) {
         this.userService = UserService;
         this.commenting = false;
     }
