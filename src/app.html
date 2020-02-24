@@ -10,15 +10,14 @@
     </loading-indicator>
 
     <nav-bar logout.call="logout()"
-             toggle-lighting-mode.call="toggleLightingMode()"
              router.bind="router"></nav-bar>
 
-    <jumbotron-header class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode} border"></jumbotron-header>
+    <jumbotron-header></jumbotron-header>
 
-    <router-view class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
+    <router-view>
     </router-view>
 
-    <sticky-footer class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
+    <sticky-footer>
     </sticky-footer>
 
 </template>
