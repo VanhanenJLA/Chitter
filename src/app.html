@@ -13,11 +13,12 @@
              toggle-lighting-mode.call="toggleLightingMode()"
              router.bind="router"></nav-bar>
 
-    <jumbotron-header class="border"></jumbotron-header>
+    <jumbotron-header class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode} border"></jumbotron-header>
 
     <router-view class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
     </router-view>
 
-    <sticky-footer></sticky-footer>
+    <sticky-footer class="bg-${sharedState.lightingMode} text-${sharedState.lightingMode | inverseLightingMode}">
+    </sticky-footer>
 
 </template>
