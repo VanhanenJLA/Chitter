@@ -3,7 +3,7 @@
     <require from="./search-bar.html"></require>
     <require from="./theme-select"></require>
 
-    <nav class="navbar navbar-expand-md"
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary"
          role="navigation">
 
         <a class="navbar-brand"
@@ -29,17 +29,14 @@
                 </li>
             </ul>
 
-            <div class="navbar-nav px-3">
-                <button class="btn"
-                        style="background:transparent;"
-                        click.trigger="user()"
-                        title="User account">
-                    <i class="fa fa-user-circle-o">Jouni</i>
-                </button>
+            <div class="navbar-nav px-md-3">
+                <theme-select></theme-select>
             </div>
 
-            <div class="navbar-nav px-3">
-                <button class="btn"
+            <search-bar></search-bar>
+
+            <div class="navbar-nav pl-md-3">
+                <button class="btn btn-outline-secondary"
                         click.trigger="logout()"
                         title="Logout">
                     <i class="fa fa-sign-out">
@@ -47,12 +44,6 @@
                     </i>
                 </button>
             </div>
-
-            <div class="navbar-nav px-3">
-                <theme-select></theme-select>
-            </div>
-
-            <search-bar></search-bar>
 
         </div>
 
