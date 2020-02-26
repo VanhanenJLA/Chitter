@@ -13,31 +13,25 @@ export class Tweet {
     constructor(userService, sharedState) {
         this.userService = userService;
         this.sharedState = sharedState;
-        this.commenting = false;
+        this.isCommenting = false;
     }
 
     commentClicked(event, data) {
-        console.log("Comment clicked!");
-        console.log(event);
-        console.log(data);
-        this.commenting = true;
+        console.info("Comment clicked!", event, data);
+        this.isCommenting = true;
     }
 
     retweetClicked(event, tweet) {
-        console.log("Retweet clicked!");
-        console.log(event);
-        console.log(tweet);
+        console.info("Retweet clicked!", event, tweet);
         this.retweet = this.userService
             .createTweet(tweet.author, tweet.content, tweet.comments);
     }
 
     submitComment(event, comment) {
-        console.log("Commented!")
-        console.log(event);
-        console.log(comment);
+        console.log("Commented!", event, comment)
         this.comments.push(this.userService
             .createComment(this.author, comment.content));
-        this.commenting = false;
+        this.isCommenting = false;
     }
 
 }

@@ -29,7 +29,7 @@
     </div>
 
     <comment-field ref="commentField"
-                   if.bind="commenting"
+                   if.bind="isCommenting"
                    id="comment-field"
                    author.bind="author"
                    submit-comment.call="submitComment(event, data)">
