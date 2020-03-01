@@ -1,11 +1,22 @@
 <template>
 
-    <div class="container-fluid">
-        <object ref="zoomable"
-                data.bind="world"
-                style="width: 100%; height: 100%;"
-                type="image/svg+xml">
-        </object>
-    </div>
+  <require from="./world.html"></require>
+
+  <style>
+    path:hover {
+      fill: aqua;
+      stroke: aqua;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+
+  <world containerless></world>
+
+
 
 </template>
