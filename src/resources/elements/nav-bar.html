@@ -7,8 +7,9 @@
          role="navigation">
 
         <a class="navbar-brand"
+           title="Home"
            href="#">
-            <i class="fa fa-home"></i>
+            <i class="fas fa-home pr-2"></i>
             <span>${router.title}</span>
         </a>
 
@@ -29,18 +30,18 @@
                 </li>
             </ul>
 
-            <div class="navbar-nav px-md-3">
-                <theme-select></theme-select>
-            </div>
+            <theme-select title="Choose a theme"
+                          class="navbar-nav px-md-3"></theme-select>
+
 
             <search-bar></search-bar>
 
             <div class="navbar-nav pl-md-3">
                 <button class="btn btn-outline-secondary"
                         click.trigger="logout()"
-                        title="Logout">
-                    <i class="fa fa-sign-out">
-                        Logout
+                        title="Sign out">
+                    <i class="fas fa-sign-out-alt"></i>
+
                     </i>
                 </button>
             </div>
