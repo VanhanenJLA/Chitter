@@ -11,10 +11,8 @@
     <span class="text-muted">${pictures.length} images in album</span>
     <div class="d-flex justify-content-around row">
         <img repeat.for="picture of pictures"
-             class="photo-rail-image img-fluid rounded"
+             class="photo-rail-image img-fluid rounded img-thumbnail"
              src.bind="picture">
     </div>
-
-
-
+    
 </template>

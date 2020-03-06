@@ -4,7 +4,6 @@
     <require from="./components/tweet-header.html"></require>
     <require from="./components/comment/comment.html"></require>
     <require from="./components/comment-field.html"></require>
-    <require from="../../../resources/valueConverters/inverse-lighting-mode"></require>
 
 
     <div class="card">
@@ -25,7 +24,7 @@
     </div>
 
     <div id="tweet-comments">
-        <comment lighting-mode.bind="sharedState.lightingMode" repeat.for="comment of comments"></comment>
+        <comment repeat.for="comment of comments"></comment>
     </div>
 
     <comment-field ref="commentField"

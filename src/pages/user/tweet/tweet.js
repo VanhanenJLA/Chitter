@@ -10,10 +10,11 @@ export class Tweet {
     @bindable comments
     @bindable retweet;
 
+    isCommenting = false;
+
     constructor(userService, sharedState) {
         this.userService = userService;
         this.sharedState = sharedState;
-        this.isCommenting = false;
     }
 
     commentClicked(event, data) {
