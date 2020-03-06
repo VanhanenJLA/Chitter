@@ -1,28 +1,26 @@
 <template>
 
-    <require from="./tweet/tweet"></require>
-    <require from="./profile/profile.html"></require>
-    <require from="./tweet/components/retweet-modal.html"></require>
+  <require from="./profile/profile.html"></require>
+  <require from="./tweet/tweet-view"></require>
+  <require from="./tweet/components/retweet-modal.html"></require>
 
-    <retweet-modal tweet.bind="retweet"></retweet-modal>
+  <retweet-modal tweet.bind="retweet"></retweet-modal>
 
-    <div class="container">
-        <div class="row">
+  <div class="container">
+    <div class="row">
 
-            <sidebar class="col-md-4">
-                <profile user.bind="user"></profile>
-            </sidebar>
+      <sidebar class="col-md-4">
+        <profile user.bind="user"></profile>
+      </sidebar>
 
-            <timeline class="col-md-8">
-                <tweet repeat.for="tweet of tweets"
-                       content.bind="tweet.content"
-                       author.bind="tweet.author"
-                       comments.bind="tweet.comments"
-                       retweet.bind="retweet">
-                </tweet>
-            </timeline>
+      <timeline class="col-md-8">
+        <tweet-view repeat.for="tweet of tweets"
+               tweet.bind="tweet"
+               retweet.bind="retweet">
+        </tweet-view>
+      </timeline>
 
-        </div>
     </div>
+  </div>
 
 </template>
