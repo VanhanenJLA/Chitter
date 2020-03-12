@@ -31,6 +31,10 @@ export class UserService {
   createTweet(author, content, comments) {
     return new Tweet(author, content, comments);
   }
+
+  createRetweet(author, tweet, content, comments) {
+    return { author, tweet, content, comments };
+  }
 }
 
 

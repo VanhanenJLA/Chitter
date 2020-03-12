@@ -1,10 +1,22 @@
 <template>
 
-  <require from="./components/tweet-button-row.html"></require>
   <require from="./components/tweet-header.html"></require>
   <require from="./components/comment/comment.html"></require>
   <require from="./components/comment-field.html"></require>
 
+  <style>
+    .image-button {
+      cursor: pointer;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 1.5rem;
+    }
+
+    .image-button:hover {
+      fill: aquamarine !important;
+      stroke: antiquewhite !important;
+    }
+  </style>
 
   <div class="card">
     <tweet-header class="card-header py-1"
@@ -15,12 +27,32 @@
     <div class="card-body">
       <div class="col-2"></div>
       <span>${tweet.content}</span>
-    </div>
 
-    <tweet-button-row comment-clicked.call="commentClicked(event, data)"
-                      retweet-clicked.call="retweetClicked(event, data)"
-                      class="card-body py-2">
-    </tweet-button-row>
+      <div class="row">
+        <div class="col">
+          <div class="row justify-content-end px-4">
+
+            <img id="comment-button"
+                 class="image-button"
+                 click.delegate="commentClicked({ event: $event, data: $this.$parent })"
+                 src="../../../static/svg/comment-dots-regular.svg">
+
+            <img id="retweet-button"
+                 class="image-button"
+                 data-toggle="modal"
+                 data-target="#retweet-modal"
+                 click.delegate="retweetClicked({ event: $event, tweet: $this.$parent })"
+                 src="../../../static/svg/retweet-solid.svg">
+
+            <img id="like-button"
+                 class="image-button"
+                 src="../../../static/svg/heart-regular.svg">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div id="tweet-comments">

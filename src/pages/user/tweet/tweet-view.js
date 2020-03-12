@@ -6,8 +6,6 @@ import { SharedState } from '../../../shared/shared-state';
 export class TweetView {
 
   @bindable tweet;
-
-  retweet;
   isCommenting = false;
 
   constructor(userService, sharedState) {
@@ -24,12 +22,14 @@ export class TweetView {
     console.info("Retweet clicked!", event, tweet);
     this.retweet = this.userService
       .createTweet(tweet.author, tweet.content, tweet.comments);
+    $('retweet-modal').modal({ show });
   }
 
-  submitComment(event, comment) {
-    console.log("Commented!", event, comment)
+  submitComment(event, content) {
+    debugger;
+    console.log("Commented!", event, content)
     this.comments.push(this.userService
-      .createComment(this.author, comment.content));
+      .createComment(this.author, content));
     this.isCommenting = false;
   }
 
