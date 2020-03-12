@@ -1,5 +1,5 @@
 {
-    "name": "aurelia-app",
+    "name": "chitter",
     "type": "project:application",
     "paths": {
         "root": "src",
