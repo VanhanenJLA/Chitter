@@ -13,7 +13,8 @@ export class MockService {
   }
 
   get Comment() {
-    return this.data.comments[this.r(this.data.comments)];
+    let comments = this.data.comments;
+    return comments[this.r(comments)];
   }
 
   get Tweet() {
@@ -26,10 +27,12 @@ export class MockService {
   }
 
   get FirstName() {
-    return this.data.firstNames[this.r(this.data.firstNames)];
+    let firstNames = this.data.firstNames;
+    return firstNames[this.r(firstNames)];
   }
   get LastName() {
-    return this.data.lastNames[this.r(this.data.lastNames)];
+    let lastNames = this.data.lastNames;
+    return lastNames[this.r(lastNames)];
   }
 
   // Returns a random index within given array.
