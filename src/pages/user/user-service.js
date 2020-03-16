@@ -5,7 +5,7 @@ import { Tweet } from '../../models/Tweet';
 
 export class UserService {
 
-  createUser() {
+  createJouni() {
     let firstname = 'Jouni';
     let lastname = 'Vanhanen';
     let handle = 'VanhanenJLA';
@@ -17,6 +17,16 @@ export class UserService {
     // let profilePicture = ProfilePicture;
     let profilePicture = "https://www.thispersondoesnotexist.com/image";
     let pictures = (() => {
+      let _pictures = [];
+      for (let i = 0; i < 6; i++) _pictures[i] = profilePicture;
+      return _pictures;
+    })();
+    return new User(firstname, lastname, handle, bio, profilePicture, pictures);
+  }
+
+  createUser(firstname, lastname, handle, bio, profilePicture, pictures) {
+    profilePicture = "https://www.thispersondoesnotexist.com/image";
+    pictures = (() => {
       let _pictures = [];
       for (let i = 0; i < 6; i++) _pictures[i] = profilePicture;
       return _pictures;
