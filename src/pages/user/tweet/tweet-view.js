@@ -12,9 +12,7 @@ export class TweetView {
   constructor(userService, sharedState, bindingSignaler) {
     this.userService = userService;
     this.sharedState = sharedState;
-
     setInterval(() => bindingSignaler.signal('timeago-signal'), 10000);
-
   }
 
   commentClicked(event, data) {
@@ -30,10 +28,9 @@ export class TweetView {
   }
 
   submitComment(event, content) {
-    debugger;
     console.log("Commented!", event, content)
-    this.comments.push(this.userService
-      .createComment(this.author, content));
+    this.tweet.comments.push(this.userService
+      .createComment(this.tweet.author, content));
     this.isCommenting = false;
   }
 

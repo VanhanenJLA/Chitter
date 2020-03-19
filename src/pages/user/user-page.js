@@ -34,6 +34,9 @@ export class UserPage {
         this.userService.createComment(this.userService.createUser(m.FirstName, m.LastName, m.handle, m.Bio, null, null), m.Comment),
         this.userService.createComment(this.userService.createUser(m.FirstName, m.LastName, m.handle, m.Bio, null, null), m.Comment)
       ];
+      comments.forEach(c => {
+        c.when *= Math.random();
+      });
       this.tweets
         .push(this.userService.createTweet(this.user,
           m.Tweet, comments))
