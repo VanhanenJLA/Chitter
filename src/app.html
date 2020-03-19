@@ -2,7 +2,7 @@
 
   <require from="./resources/elements/jumbotron.html"></require>
   <require from="./resources/elements/nav-bar.html"></require>
-  <require from="./resources/elements/footer.html"></require>
+  <require from="./resources/elements/sticky-footer.html"></require>
   <require from="./resources/elements/loading-indicator"></require>
 
   <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
@@ -13,6 +13,6 @@
 
   <jumbotron shared-state.bind="sharedState"></jumbotron>
   <router-view></router-view>
-  <footer></footer>
+  <sticky-footer></sticky-footer>
 
 </template>
