@@ -1,6 +1,7 @@
-<template bindable="lightingMode">
+<template bindable="comment">
 
     <require from="./comment-header.html"></require>
+    <require from="./../../../../../resources/valueConverters/time-ago"></require>
 
     <div class="row">
 
@@ -11,12 +12,12 @@
             <div class="card">
 
                 <comment-header class="card-header py-1"
-                                author.bind="$this.$parent.comment.author"
-                                time="2h">
+                                author.bind="comment.author"
+                                when="${comment.when | timeAgo & signal:'timeago-signal'}">
                 </comment-header>
 
                 <div class="card-body">
-                    <span>${$this.$parent.comment.content}</span>
+                    <span>${comment.content}</span>
                 </div>
 
             </div>

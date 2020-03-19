@@ -1,7 +1,7 @@
 <template>
 
   <require from="./components/tweet-header.html"></require>
-  <require from="./components/comment/comment.html"></require>
+  <require from="./components/comment/comment-view.html"></require>
   <require from="./components/comment-field.html"></require>
   <require from="./../../../resources/valueConverters/time-ago"></require>
 
@@ -54,7 +54,8 @@
   </div>
 
   <div id="tweet-comments">
-    <comment repeat.for="comment of tweet.comments"></comment>
+    <comment-view repeat.for="comment of tweet.comments"
+             comment.bind="comment"></comment-view>
   </div>
 
   <comment-field ref="commentField"
