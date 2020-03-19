@@ -1,9 +1,14 @@
-<template>
+<template bindable="sharedState">
   <div id="jumbotron"
        class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Welcome to Chitter!</h1>
       <p class="lead">Enjoy the ramblings of procedurally generated people.</p>
+      <p class="text-muted">If you get fed up with <strike>this bozo</strike>
+        ${sharedState.user.fullname},
+        simply refresh
+        <a href="#/user"><i class="fas fa-redo"></i></a>
+        the page.</p>
     </div>
   </div>
 </template>

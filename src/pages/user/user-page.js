@@ -1,15 +1,15 @@
 import { bindable, inject } from 'aurelia-framework';
 import { UserService } from '../user/user-service'
 import { MockService } from '../../shared/mock-service';
+import { SharedState } from '../../shared/shared-state';
 
-@inject(UserService)
+@inject(UserService, SharedState)
 export class UserPage {
 
   @bindable user;
   tweets;
 
-  constructor(userService) {
-
+  constructor(userService, sharedState) {
     let m = new MockService();
 
     this.userService = userService;
@@ -23,6 +23,7 @@ export class UserPage {
       m.Tweet, comments);
 
     this.tweets = [tweet];
+    sharedState.user = this.user;
   }
 
   attached() {

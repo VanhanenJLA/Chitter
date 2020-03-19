@@ -1,23 +1,18 @@
 <template binding="router">
 
-    <require from="./resources/elements/jumbotron-header.html"></require>
-    <require from="./resources/elements/nav-bar.html"></require>
-    <require from="./resources/elements/sticky-footer.html"></require>
-    <require from="./resources/elements/loading-indicator"></require>
-    <require from="./resources/valueConverters/inverse-lighting-mode"></require>
+  <require from="./resources/elements/jumbotron.html"></require>
+  <require from="./resources/elements/nav-bar.html"></require>
+  <require from="./resources/elements/footer.html"></require>
+  <require from="./resources/elements/loading-indicator"></require>
 
-    <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
-    </loading-indicator>
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting">
+  </loading-indicator>
 
-    <nav-bar logout.call="logout()"
-             router.bind="router"></nav-bar>
+  <nav-bar logout.call="logout()"
+           router.bind="router"></nav-bar>
 
-    <jumbotron-header></jumbotron-header>
-
-    <router-view>
-    </router-view>
-
-    <sticky-footer>
-    </sticky-footer>
+  <jumbotron shared-state.bind="sharedState"></jumbotron>
+  <router-view></router-view>
+  <footer></footer>
 
 </template>
