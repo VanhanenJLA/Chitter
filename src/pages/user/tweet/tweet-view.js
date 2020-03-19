@@ -1,16 +1,20 @@
-import { bindable, inject } from 'aurelia-framework';
+import { bindable, inject, bindingsignaler } from 'aurelia-framework';
 import { UserService } from "./../user-service";
 import { SharedState } from '../../../shared/shared-state';
+import { BindingSignaler } from 'aurelia-templating-resources';
 
-@inject(UserService, SharedState)
+@inject(UserService, SharedState, BindingSignaler)
 export class TweetView {
 
   @bindable tweet;
   isCommenting = false;
 
-  constructor(userService, sharedState) {
+  constructor(userService, sharedState, bindingSignaler) {
     this.userService = userService;
     this.sharedState = sharedState;
+
+    setInterval(() => bindingSignaler.signal('timeago-signal'), 10000);
+
   }
 
   commentClicked(event, data) {

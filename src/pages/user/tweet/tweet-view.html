@@ -3,6 +3,7 @@
   <require from="./components/tweet-header.html"></require>
   <require from="./components/comment/comment.html"></require>
   <require from="./components/comment-field.html"></require>
+  <require from="./../../../resources/valueConverters/time-ago"></require>
 
   <style>
     .btn-circle.btn-sm {
@@ -17,7 +18,7 @@
   <div class="card">
     <tweet-header class="card-header py-1"
                   author.bind="tweet.author"
-                  time="${Date.now()}">
+                  when="${tweet.when | timeAgo & signal:'timeago-signal'}">
     </tweet-header>
 
     <div class="card-body pb-1">
@@ -48,7 +49,7 @@
           </div>
         </div>
       </div>
-  
+
     </div>
   </div>
 

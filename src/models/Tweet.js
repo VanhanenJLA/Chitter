@@ -3,5 +3,6 @@ export class Tweet {
     this.author = author;
     this.content = content;
     this.comments = comments;
+    this.when = Date.now();
   }
 }
