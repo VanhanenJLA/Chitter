@@ -30,7 +30,7 @@
           <div class="row justify-content-end">
 
             <img id="comment-button"
-                 class="btn btn-sm btn-circle btn-outline-secondary"
+                 class="btn btn-sm btn-circle btn-outline-secondary ${isCommenting ? 'active' : ''}"
                  click.delegate="commentClicked({ event: $event, data: $this.$parent })"
                  src="../../../static/svg/comment-dots-regular.svg">
 

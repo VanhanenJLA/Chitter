@@ -7,6 +7,8 @@ import { BindingSignaler } from 'aurelia-templating-resources';
 export class TweetView {
 
   @bindable tweet;
+  @bindable retweet;
+
   isCommenting = false;
 
   constructor(userService, sharedState, bindingSignaler) {
@@ -17,14 +19,12 @@ export class TweetView {
 
   commentClicked(event, data) {
     console.info("Comment clicked!", event, data);
-    this.isCommenting = true;
+    this.isCommenting = !this.isCommenting;
   }
 
   retweetClicked(event, tweet) {
     console.info("Retweet clicked!", event, tweet);
-    this.retweet = this.userService
-      .createTweet(tweet.author, tweet.content, tweet.comments);
-    $('retweet-modal').modal({ show });
+    this.retweet = this.tweet;
   }
 
   submitComment(event, content) {

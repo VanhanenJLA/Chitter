@@ -7,6 +7,7 @@ import { SharedState } from '../../shared/shared-state';
 export class UserPage {
 
   @bindable user;
+  retweet;
   tweets;
 
   constructor(userService, sharedState) {
