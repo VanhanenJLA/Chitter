@@ -28,7 +28,7 @@ export class UserService {
     profilePicture = "https://www.thispersondoesnotexist.com/image";
     pictures = (() => {
       let _pictures = [];
-      for (let i = 0; i < 6; i++) _pictures[i] = profilePicture;
+      for (let i = 0; i < 8; i++) _pictures[i] = profilePicture;
       return _pictures;
     })();
     return new User(firstname, lastname, handle, bio, profilePicture, pictures);

@@ -1,18 +1,19 @@
 <template bindable="pictures">
 
-    <style>
-        .photo-rail-image {
-            max-height: 85px;
-            max-width: 85px;
-            margin: 3px;
-        }
-    </style>
-
+  <div class="row my-3">
     <span class="text-muted">${pictures.length} images in album</span>
-    <div class="d-flex justify-content-around row">
-        <img repeat.for="picture of pictures"
+    <div class="d-inline-flex justify-content-around row no-gutters">
+
+      <div class="col-3"
+           repeat.for="picture of pictures">
+        <img data-toggle="modal"
+             data-target="#profile-picture-modal"
              class="photo-rail-image img-fluid rounded img-thumbnail"
+             style="cursor: pointer;"
              src.bind="picture">
+      </div>
+
     </div>
-    
+  </div>
+
 </template>
