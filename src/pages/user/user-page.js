@@ -39,9 +39,9 @@ export class UserPage {
         c.when *= Math.random();
       });
       this.tweets
-        .push(this.userService.createTweet(this.user,
+        .unshift(this.userService.createTweet(this.user,
           m.Tweet, comments))
-    }, 5000);
+    }, 1.2E4);
   }
 
 }

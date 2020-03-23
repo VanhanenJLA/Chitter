@@ -7,3 +7,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.btn-circle.btn-sm {
+  margin-left: 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.4rem 0px;
+  border-radius: 50%;
+}

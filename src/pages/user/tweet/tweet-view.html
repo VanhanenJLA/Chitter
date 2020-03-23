@@ -5,66 +5,56 @@
   <require from="./components/comment-field.html"></require>
   <require from="./../../../resources/valueConverters/time-ago"></require>
 
-  <style>
-    .btn-circle.btn-sm {
-      margin-left: 0.2rem;
-      width: 2rem;
-      height: 2rem;
-      padding: 0.4rem 0px;
-      border-radius: 50%;
-    }
-  </style>
 
-  <div class="card">
-    <tweet-header class="card-header py-1"
-                  author.bind="tweet.author"
-                  when="${tweet.when | timeAgo & signal:'timeago-signal'}">
-    </tweet-header>
+  <div class="animated fadeIn mb-3">
 
-    <div class="card-body pb-1">
-      <div class="col-2"></div>
-      <span>${tweet.content}</span>
+    <div class="card">
+      <tweet-header class="card-header py-1"
+                    author.bind="tweet.author"
+                    when="${tweet.when | timeAgo & signal:'timeago-signal'}">
+      </tweet-header>
 
-      <div class="row">
-        <div class="col">
-          <div class="row justify-content-end">
+      <div class="card-body pb-1">
+        <div class="col-2"></div>
+        <span>${tweet.content}</span>
 
-            <img id="comment-button"
-                 class="btn btn-sm btn-circle btn-outline-secondary ${isCommenting ? 'active' : ''}"
-                 click.delegate="commentClicked({ event: $event, data: $this.$parent })"
-                 src="../../../static/svg/comment-dots-regular.svg">
+        <div class="row">
+          <div class="col">
+            <div class="row justify-content-end">
 
-            <img id="retweet-button"
-                 class="btn btn-sm btn-circle btn-outline-secondary"
-                 data-toggle="modal"
-                 data-target="#retweet-modal"
-                 click.delegate="retweetClicked({ event: $event, tweet: $this.$parent })"
-                 src="../../../static/svg/retweet-solid.svg">
+              <img class="btn btn-sm btn-circle btn-outline-secondary ${isCommenting ? 'active' : ''}"
+                   click.delegate="commentClicked({ event: $event, data: $this.$parent })"
+                   src="../../../static/svg/comment-dots-regular.svg">
 
-            <img id="like-button"
-                 class="btn btn-sm btn-circle btn-outline-secondary ${liked ? 'active' : ''}"
-                 src="../../../static/svg/heart-regular.svg"
-                 click.delegate="liked = !liked">
+              <img class="btn btn-sm btn-circle btn-outline-secondary"
+                   data-toggle="modal"
+                   data-target="#retweet-modal"
+                   click.delegate="retweetClicked({ event: $event, tweet: $this.$parent })"
+                   src="../../../static/svg/retweet-solid.svg">
 
+              <img class="btn btn-sm btn-circle btn-outline-secondary ${liked ? 'active' : ''}"
+                   src="../../../static/svg/heart-regular.svg"
+                   click.delegate="liked = !liked">
+
+            </div>
           </div>
         </div>
+
       </div>
-
     </div>
+
+    <div id="tweet-comments">
+      <comment-view repeat.for="comment of tweet.comments"
+                    comment.bind="comment"></comment-view>
+    </div>
+
+    <comment-field ref="commentField"
+                   if.bind="isCommenting"
+                   author.bind="tweet.author"
+                   submit-comment.call="submitComment(event, content)">
+    </comment-field>
+
   </div>
 
-  <div id="tweet-comments">
-    <comment-view repeat.for="comment of tweet.comments"
-             comment.bind="comment"></comment-view>
-  </div>
-
-  <comment-field ref="commentField"
-                 if.bind="isCommenting"
-                 id="comment-field"
-                 author.bind="tweet.author"
-                 submit-comment.call="submitComment(event, content)">
-  </comment-field>
-
-  <br>
 
 </template>
