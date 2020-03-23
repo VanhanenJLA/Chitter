@@ -5,7 +5,6 @@
   <require from="./components/comment-field.html"></require>
   <require from="./../../../resources/valueConverters/time-ago"></require>
 
-
   <div class="animated fadeIn mb-3">
 
     <div class="card">
@@ -15,24 +14,23 @@
       </tweet-header>
 
       <div class="card-body pb-1">
-        <div class="col-2"></div>
         <span>${tweet.content}</span>
 
         <div class="row">
           <div class="col">
-            <div class="row justify-content-end">
+            <div class="row justify-content-end pt-1">
 
               <img class="btn btn-sm btn-circle btn-outline-secondary ${isCommenting ? 'active' : ''}"
                    click.delegate="commentClicked({ event: $event, data: $this.$parent })"
                    src="../../../static/svg/comment-dots-regular.svg">
 
-              <img class="btn btn-sm btn-circle btn-outline-secondary"
+              <img class="btn btn-sm btn-circle btn-outline-secondary ml-2"
                    data-toggle="modal"
                    data-target="#retweet-modal"
                    click.delegate="retweetClicked({ event: $event, tweet: $this.$parent })"
                    src="../../../static/svg/retweet-solid.svg">
 
-              <img class="btn btn-sm btn-circle btn-outline-secondary ${liked ? 'active' : ''}"
+              <img class="btn btn-sm btn-circle btn-outline-secondary ml-2 ${liked ? 'active' : ''}"
                    src="../../../static/svg/heart-regular.svg"
                    click.delegate="liked = !liked">
 
