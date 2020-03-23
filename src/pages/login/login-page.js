@@ -1,21 +1,32 @@
 import { inject, PLATFORM, Aurelia } from 'aurelia-framework';
-import { LoginService } from './login-service';
 
 @inject(Aurelia)
 export class LoginPage {
 
-    constructor(Aurelia, LoginService) {
-      this.aurelia = Aurelia;
-      this.loginService = LoginService;
+  constructor(Aurelia) {
+    this.aurelia = Aurelia;
+  }
+
+  attached() {
+    if (this._rememberMe) {
+      this.login('admin', 'admin');
+    }
+  }
+
+  login(username, password) {
+    this.didSubmitForm = true;
+    if (username && password) {
+      this.mockAuthentication();
     }
 
-    login(username, password) {
-      if (username && password) {this.aurelia.setRoot(PLATFORM.moduleName('app'));}
-    }
+  }
 
-    attached() {
-      if (this._rememberMe) {
-        this.login('admin', 'admin');
-      }
-    }
+  mockAuthentication() {
+    this.isConnecting = true;
+    setTimeout(() => {
+      this.isConnecting = false;
+      this.aurelia.setRoot(PLATFORM.moduleName('app'));
+    }, 2000);
+  }
+
 }
