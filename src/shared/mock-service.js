@@ -1,378 +1,39 @@
+import data from './../data/mock-data.json'
+
 export class MockService {
 
-  data = new MockData();
+  data = data;
 
   get handle() {
-    let handles = this.data.handles;
-    return handles[this.r(handles)];
+    return getRandomElement(this.data.handles)
   }
 
   get Bio() {
-    let bios = this.data.bios;
-    return bios[this.r(bios)];
+    return getRandomElement(this.data.bios)
   }
 
   get Comment() {
-    let comments = this.data.comments;
-    return comments[this.r(comments)];
+    return getRandomElement(this.data.comments)
   }
 
   get Tweet() {
-    let sentences = this.data.sentences;
     let cap = Math.ceil(Math.random() * 5);
     let tweet = "";
     for (let i = 0; i < cap; i++)
-      tweet += " " + sentences[this.r(sentences)];
+      tweet += " " + getRandomElement(this.data.sentences);
     return tweet;
   }
 
   get FirstName() {
-    let firstNames = this.data.firstNames;
-    return firstNames[this.r(firstNames)];
+    return getRandomElement(this.data.firstNames)
   }
+
   get LastName() {
-    let lastNames = this.data.lastNames;
-    return lastNames[this.r(lastNames)];
-  }
-
-  // Returns a random index within given array.
-  r(array) {
-    return Math.floor(Math.random() * array.length);
+    return getRandomElement(this.data.lastNames)
   }
 
 }
 
-class MockData {
-
-  handles = [
-    "Chariotlavish",
-    "Hollypushpin",
-    "Smacedizziness",
-    "Refractimbecile",
-    "Wicksubtitle",
-    "Scranddale",
-    "Vacationrate",
-    "Shenaniganenchilada",
-    "Whizzerhypnotize",
-    "Obieemotion",
-    "Pickeringsimilar",
-    "Weakestshiloh",
-    "Buddhistloose",
-    "Proclaimneurology",
-    "Attendeehamper",
-    "Foodman",
-    "Diamondricotta",
-    "Cyclezips",
-    "Apneanautically",
-    "Civilknuised",
-    "Piperprude",
-    "Preparationcrusher",
-    "Submittedstrainer",
-    "Chidesubtle",
-    "Petuniaprompt",
-    "Hodgkinastley",
-    "Defenseplus",
-    "Spotifyaerosol",
-    "Glovemutate",
-    "Dolphinsprite",
-    "Kissingcollar",
-    "Croorlily",
-    "Latitudebrigade",
-    "Pinkhygroscopic",
-    "Enablewho",
-    "Loutishshrimp",
-    "Toastbagpipe",
-    "Supporthuddling",
-    "Papermarital",
-    "Scholarcaliber",
-    "Linkinwatereskin",
-    "Optictruck",
-    "Ampneybalgy",
-    "Impulsecase",
-    "Frenzyhelpless",
-    "Tagdogfish",
-    "Jitteryzombie",
-    "Twistunarmed",
-    "Santiagodamsire",
-    "Snarkybrim",
-    "Ladybugburns",
-    "Sheepgraduated",
-    "Apricotruin",
-    "Pledgesaucepan",
-    "Bluishrae",
-    "Resealunwind",
-    "Mapsiamese",
-    "Decathloncapsize",
-    "Mashmanette",
-    "Bellefinance",
-    "Agreeingbalted",
-    "Bragcarnivore",
-    "Slimyunfit",
-    "Sushiredneck",
-    "Maverickscad",
-    "Gritcolumbus",
-    "Fleshjansky",
-    "Unlawfuldesigner",
-    "Humorouscorrupt",
-    "Mowingflorist",
-    "Vapidchoking",
-    "Faboutside",
-    "Privatecreme",
-    "Slangtaff",
-    "Humanclosable",
-    "Infectiousjunkyard",
-    "Shadowkeck",
-    "Prismstoop",
-    "Grapesbook",
-    "Motorcycletacit",
-    "Interviewearthy",
-    "Stableblack",
-    "Taglondonderry",
-    "Jauntyanalyst",
-    "Grimleydiving",
-    "Parkbehance",
-    "Nintendothrush",
-    "Demandingfern",
-    "Arsenicallocates",
-    "Depthreclusive",
-    "Livedorset",
-    "Wrapvariety",
-    "Measurevarden",
-    "Cufflinkdicky",
-    "Effectivejelly",
-    "Patiocentral",
-    "Urgencytingley",
-    "Outdatedwhipped",
-  ]
-
-  bios = [
-    "Social media geek. Incurable web nerd. Unapologetic travel scholar. Music buff. Zombie aficionado.",
-    "Problem solver. Amateur pop cultureaholic. Passionate alcohol junkie. Tv advocate. Web specialist. Food lover. Professional travel fanatic.",
-    "Tv maven. Social media practitioner. Zombieaholic. Friendly student. Alcohol aficionado. Explorer.",
-    "Web nerd. Hardcore alcohol advocate. Twitter enthusiast. Amateur internetaholic. Zombie specialist.",
-    "Zombie fanatic. Problem solver. Internet scholar. Twitter evangelist. Food geek. Future teen idol.",
-    "Alcohol specialist. Analyst. Explorer. Organizer. Proud twitter lover. Certified entrepreneur.",
-    "Hardcore food scholar. Travel trailblazer. Bacon fanatic. General gamer. Tvaholic. Zombie expert.",
-    "Travel guru. Food fan. Proud social media fanatic. Bacon maven. Hipster-friendly problem solver. Incurable creator. Friendly web aficionado.",
-    "Internet evangelist. Freelance zombie fan. General tv junkie. Food practitioner. Professional creator. Explorer.",
-    "Beer lover. Award-winning analyst. Unapologetic music geek. Twitter ninja. Avid student.",
-    "Proud internet fan. Travel advocate. Social media lover. Music nerd. Twitter enthusiast. Pop culture aficionado.",
-    "Professional tv maven. Bacon geek. General pop culture fanatic. Alcohol scholar.",
-    "Professional web expert. Thinker. Twitter fan. Tv guru. Beer junkie. Music fanatic. Student. Troublemaker. Bacon buff. Alcohol enthusiast.",
-    "Entrepreneur. Problem solver. Twitter junkie. Wannabe zombie buff. Gamer. Evil reader. Total tv practitioner.",
-    "Coffee enthusiast. Introvert. Social media buff. Proud beer nerd. Reader. Subtly charming thinker.",
-    "Twitter lover. Freelance zombie specialist. General travel guru. Alcohol ninja. Student. Total introvert. Tv scholar.",
-    "Internet advocate. Web junkie. Social media guru. Music specialist. Coffee enthusiast. Certified tv fanatic. Student.",
-    "Falls down a lot. Web guru. Thinker. Entrepreneur. Infuriatingly humble communicator.",
-    "Hardcore explorer. Coffee enthusiast. Proud zombie expert. Music fanatic. Pop culture fan. Food evangelist.",
-    "Internet lover. Tv junkie. Zombie geek. Social media advocate. Beer fanatic. Web aficionado. Bacon buff. Food guru. Music specialist.",
-    "Writer. Bacon fanatic. Web enthusiast. General zombie specialist. Proud internet expert. Food lover. Pop culture fan. Social media junkie.",
-  ];
-
-  comments = [
-    "My diet is a cup of coffee, and I want to cut back. Here is to clammy TV shows, for real. ",
-    "My groove is amazing, and I want to break things. Seeing awkward alcohol, I think.",
-    "My car is debt free, and I want to die trying. A bit of specific cowards, politically.",
-    "My smile is not for you, and I want to get ahead. Excellent creepy dreamers, because reasons.",
-    "WeWork lost $2 billion in inner sunset and the gate, bag not over Eurovision jobs too. Italian?",
-    "Kind of younger women of either of trash business for how I squint, I just like being a 503 paper?",
-    "It's 2019. We're now exactly how she said the first show will likely face ripped off did a neural net.",
-    "Congrats on the new adventure!!",
-    "Vastly splendid mate",
-    "Let me take a nap... great animation, anyway.",
-    "It makes me laugh...",
-    "Such job, many type, so amazing",
-    "It's incredible not just appealing!",
-    "Hero, shade, design, shot – neat =)",
-    "I think I'm crying. It's that incredible.",
-    "Splendid work you have here.",
-    "Classic camera angle!",
-    "Mission accomplished. It's sleek mate",
-    "Splendid :-) I want to make love to the use of gradient and shape!",
-    "This icons has navigated right into my heart.",
-    "Extra thought out! Flat design is going to die.",
-  ];
-
-  sentences = [
-    `She did her best to help him.`,
-    `Patricia loves the sound of nails strongly pressed against the chalkboard.`,
-    `Joe made the sugar cookies; Susan decorated them.`,
-    `It's not often you find a soggy banana on the street.`,
-    `Improve your goldfish's physical fitness by getting him a bicycle.`,
-    `Random words in front of other random words create a random sentence.`,
-    `We will not allow you to bring your pet armadillo along.`,
-    `his seven-layer cake only had six layers.`,
-    `People who insist on picking their teeth with their elbows are so annoying!`,
-    `The Japanese yen for commerce is still well-known.`,
-    `The lyrics of the song sounded like fingernails on a chalkboard.`,
-    `Her hair was windswept as she rode in the black convertible.`,
-    `The pigs were insulted that they were named hamburgers.`,
-    `The near-death experience brought new ideas to light.`,
-    `We have a lot of rain in June.`,
-    `He put heat on the wound to see what would grow.`,
-    `It would have been a better night if the guys next to us weren't in the splash zone.`,
-    `Car safety systems have come a long way, but he was out to prove they could be outsmarted.`,
-    `If any cop asks you where you were, just say you were visiting Kansas.`,
-    `He didn't heed the warning and it had turned out surprisingly well.`,
-    `The Tsunami wave crashed against the raised houses and broke the pilings as if they were toothpicks.`,
-    `Two more days and all his problems would be solved.`,
-    `Love is not like pizza.`,
-    `I love bacon, beer, birds, and baboons.`,
-    `He found the chocolate covered roaches quite tasty.`,
-    `Iguanas were falling out of the trees.`,
-    `The rusty nail stood erect, angled at a 45 - degree angle, just waiting for the perfect barefoot to come along.`,
-    `I currently have 4 windows open up… and I don’t know why.`,
-    `Everyone was busy, so I went to the movie alone.`,
-    `The pigs were insulted that they were named hamburgers.`,
-    `Writing a list of random sentences is harder than I initially thought it would be.`,
-    `He's in a boy band which doesn't make much sense for a snake.`,
-    `It didn't make sense unless you had the power to eat colors.`,
-    `The doll spun around in circles in hopes of coming alive.`,
-    `The clouds formed beautiful animals in the sky that eventually created a tornado to wreak havoc.`,
-    `It's a skateboarding penguin with a sunhat!`,
-    `The doll spun around in circles in hopes of coming alive.`,
-    `As the years pass by, we all know owners look more and more like their dogs.`,
-    `I covered my friend in baby oil.`,
-    `Eating eggs on Thursday for choir practice was recommended.`,
-    `If eating three - egg omelets causes weight - gain, budgie eggs are a good substitute.`,
-    `I really want to go to work, but I am too sick to drive.`,
-    `Garlic ice - cream was her favorite.`,
-    `The newly planted trees were held up by wooden frames in hopes they could survive the next storm.`,
-    `When I was little I had a car door slammed shut on my hand and I still remember it quite vividly.`,
-    `Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.`,
-    `The random sentence generator generated a random sentence about a random sentence.`,
-    `The hand sanitizer was actually clear glue.`,
-    `Truth in advertising and dinosaurs with skateboards have much in common.`,
-    `She tilted her head back and let whip cream stream into her mouth while taking a bath.`,
-    `Beach-combing replaced wine tasting as his new obsession.`,
-    `Yeah, I think it's a good environment for learning English.`,
-    `Abstraction is often one floor above you.`,
-    `Nudist colonies shun fig-leaf couture.`,
-    `As you consider all the possible ways to improve yourself and the world, you notice John Travolta seems fairly unhappy.`,
-    `He stomped on his fruit loops and thus became a cereal killer.`,
-    `Greetings from the real universe.`,
-    `She was the type of girl who wanted to live in a pink house.`,
-    `I love eating toasted cheese and tuna sandwiches.`,
-    `The green tea and avocado smoothie turned out exactly as would be expected.`,
-    `Every manager should be able to recite at least ten nursery rhymes backward.`,
-    `The wake behind the boat told of the past while the open sea for told life in the unknown future.`,
-    `She saw the brake lights, but not in time.`,
-    `She wrote him a long letter, but he didn't read it.`,
-    `There's a message for you if you look up.`,
-    `His son quipped that power bars were nothing more than adult candy bars.`,
-    `Art doesn't have to be intentional.`,
-    `You're unsure whether or not to trust him, but very thankful that you wore a turtle neck.`,
-    `Iron pyrite is the most foolish of all minerals.`,
-    `One small action would change her life, but whether it would be for better or for worse was yet to be determined.`,
-    `He would only survive if he kept the fire going and he could hear thunder in the distance.`,
-  ]
-
-  firstNames = [
-    "Dawn",
-    "Latonya",
-    "Earle",
-    "Chase",
-    "Catherine",
-    "Wendy",
-    "Olivia",
-    "Bettye",
-    "Amado",
-    "Wendell",
-    "Terry",
-    "Walker",
-    "Camille",
-    "Hester",
-    "Nanette",
-    "Cornelia",
-    "Suzette",
-    "Jenny",
-    "Mason",
-    "Cary",
-    "Leila",
-    "Williams",
-    "Molly",
-    "Malik",
-    "Lara",
-    "Ivy",
-    "Patrica",
-    "Gavin",
-    "Von",
-    "Jannie",
-    "Sebastian",
-    "Santiago",
-    "Sheryl",
-    "Alan",
-    "Ruby",
-    "Leroy",
-    "Virginia",
-    "Antonia",
-    "Sandy",
-    "Aldo",
-    "Ezekiel",
-    "Jo",
-    "Flossie",
-    "Marsha",
-    "Pamela",
-    "Dee",
-    "Dylan",
-    "Tracey",
-    "Zane",
-    "Chet",
-  ]
-
-  lastNames = [
-    "Shaw",
-    "Gillespie",
-    "Sherman",
-    "Barry",
-    "Roman",
-    "Good",
-    "Holloway",
-    "Nelson",
-    "Austin",
-    "Wilkerson",
-    "King",
-    "Brennan",
-    "Freeman",
-    "Silva",
-    "Coleman",
-    "Harris",
-    "Black",
-    "Singleton",
-    "Carlson",
-    "English",
-    "Chan",
-    "Valenzuela",
-    "Burke",
-    "Noble",
-    "Mccormick",
-    "Stevens",
-    "Hicks",
-    "Rubio",
-    "Werner",
-    "Harrell",
-    "Elliott",
-    "Rivers",
-    "Mcdowell",
-    "Olsen",
-    "Jimenez",
-    "Ramirez",
-    "Haynes",
-    "Curry",
-    "Pearson",
-    "Stout",
-    "Garcia",
-    "Singleton",
-    "Fischer",
-    "Lindsey",
-    "Giles",
-    "Andersen",
-    "Sanchez",
-    "Anthony",
-    "Ibarra",
-    "Williams",
-  ]
-
-}
+const getRandomElement = array => array[Math.floor(Math.random() * array.length)];
 
 
