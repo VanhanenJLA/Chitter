@@ -1,11 +1,11 @@
 export class User {
-  constructor(firstname, lastname, handle, bio, profilePicture, pictures) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.fullname = `${firstname} ${lastname}`;
+  constructor(firstName, lastName, handle, bio, pictures) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.handle = handle;
     this.bio = bio;
-    this.profilePicture = profilePicture;
     this.pictures = pictures;
+    this.profilePicture = pictures[0];
+    this.fullName = `${this.firstName} ${this.lastName}`;
   }
 }

@@ -5,10 +5,8 @@ import { Tweet } from '../../models/Tweet';
 
 export class UserService {
 
-  createUser(firstname, lastname, handle, bio, profilePicture, pictures) {
-    profilePicture = "https://www.thispersondoesnotexist.com/image";
-    pictures = new Array(8).fill(profilePicture)
-    return new User(firstname, lastname, handle, bio, profilePicture, pictures);
+  createUser(firstName, lastName, handle, bio, pictures) {
+    return new User(firstName, lastName, handle, bio, pictures);
   }
 
   createComment(author, content) {

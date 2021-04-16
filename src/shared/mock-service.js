@@ -2,34 +2,36 @@ import data from './../data/mock-data.json'
 
 export class MockService {
 
-  data = data;
+  generateHandle = () => getRandomElement(data.handles)
+  generateBio = () => getRandomElement(data.bios)
+  generateSentence = () => getRandomElement(data.sentences)
+  generateFirstName = () => getRandomElement(data.firstNames)
+  generateLastName = () => getRandomElement(data.lastNames)
 
-  get handle() {
-    return getRandomElement(this.data.handles)
-  }
-
-  get Bio() {
-    return getRandomElement(this.data.bios)
-  }
-
-  get Comment() {
-    return getRandomElement(this.data.comments)
-  }
-
-  get Tweet() {
+  generateTweet() {
     let cap = Math.ceil(Math.random() * 5);
     let tweet = "";
     for (let i = 0; i < cap; i++)
-      tweet += " " + getRandomElement(this.data.sentences);
+      tweet += " " + this.generateSentence();
     return tweet;
   }
 
-  get FirstName() {
-    return getRandomElement(this.data.firstNames)
+  generateUser() {
+    let pictures = new Array(8).fill("https://www.thispersondoesnotexist.com/image")
+    return {
+      firstName: this.generateFirstName(),
+      lastName: this.generateLastName(),
+      handle: this.generateHandle(),
+      bio: this.generateBio(),
+      pictures,
+    }
   }
 
-  get LastName() {
-    return getRandomElement(this.data.lastNames)
+  generateComment() {
+    return {
+      author: this.generateUser(),
+      content: this.generateSentence()
+    }
   }
 
 }
