@@ -10,17 +10,11 @@ export class LoginPage {
     this.aurelia = Aurelia;
   }
 
-  attached() {
-    if (this._rememberMe)
-      this.login('admin', 'admin');
-  }
-
   login(username, password) {
     this.didSubmitForm = true;
     if (username && password) {
       this.mockAuthentication();
     }
-
   }
 
   mockAuthentication() {
