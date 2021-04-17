@@ -4,7 +4,7 @@ import { inject, PLATFORM, Aurelia } from 'aurelia-framework';
 export class LoginPage {
 
   didSubmitForm = false;
-  isConnecting = false;
+  isAuthenticating = false;
 
   constructor(Aurelia) {
     this.aurelia = Aurelia;
@@ -18,9 +18,9 @@ export class LoginPage {
   }
 
   mockAuthentication() {
-    this.isConnecting = true;
+    this.isAuthenticating = true;
     setTimeout(() => {
-      this.isConnecting = false;
+      this.isAuthenticating = false;
       this.aurelia.setRoot(PLATFORM.moduleName('app'));
     }, 2000);
   }
