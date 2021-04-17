@@ -5,21 +5,14 @@ import { Tweet } from '../../models/Tweet';
 
 export class UserService {
 
-  createUser(firstName, lastName, handle, bio, pictures) {
-    return new User(firstName, lastName, handle, bio, pictures);
-  }
+  createUser = (firstName, lastName, handle, bio, pictures) =>
+    new User(firstName, lastName, handle, bio, pictures);
 
-  createComment(author, content) {
-    return new Comment(author, content);
-  }
+  createComment = (author, content) =>
+    new Comment(author, content);
 
-  createTweet(author, content, comments) {
-    return new Tweet(author, content, comments);
-  }
-
-  createRetweet(author, tweet, content, comments) {
-    return { author, tweet, content, comments };
-  }
+  createTweet = (author, content, comments) =>
+    new Tweet(author, content, comments);
 
 }
 

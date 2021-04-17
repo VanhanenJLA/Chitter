@@ -93,19 +93,13 @@ export class ThemeSelect {
     ];
 
     constructor() {
-
-        let theme = localStorage.getItem('theme');
-        if (theme !== null) {
-            this.changeTheme(this.themes.find(e => e.title === theme));
-        } else {
-            this.changeTheme(this.themes.find(e => e.title === 'Default'));
-        }
-
+        let themeKey = localStorage.getItem('theme');
+        themeKey ??= 'Default';
+        let theme = this.themes.find(t => t.title === themeKey)
+        this.changeTheme(theme);
     }
 
     changeTheme(theme) {
-        // if (localStorage.getItem('theme') === theme.title) return;
-
         const head = document.getElementsByTagName("head")[0];
         const itemId = 'css-sheet';
         let link = document.getElementById(itemId);

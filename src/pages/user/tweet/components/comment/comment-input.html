@@ -1,0 +1,30 @@
+<template bindable="content, author, commentSubmitted">
+
+  <require from="./comment-header.html"></require>
+
+  <div class="row">
+
+    <div class="col-auto"></div>
+
+    <div class="col">
+
+      <div class="card">
+        <comment-header class="card-header py-1"
+                        author.bind="author"
+                        time="2h">
+        </comment-header>
+
+        <div class="card-body">
+          <textarea id="comment-input"
+                    class="form-control"
+                    placeholder="Write a comment."
+                    value.bind="content"
+                    required></textarea>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</template>

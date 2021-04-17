@@ -21,7 +21,10 @@
         </div>
 
         <div class="modal-body">
-          <tweet-view tweet.bind="tweet"></tweet-view>
+
+          <tweet-view show-comments.one-time="false"
+                      show-actions.one-time="false"
+                      tweet.bind="tweet"></tweet-view>
         </div>
 
         <div class="modal-footer">
@@ -29,6 +32,8 @@
                   class="btn btn-secondary"
                   data-dismiss="modal">Close</button>
           <button type="button"
+                  disabled
+                  title="Not implemented yet!"
                   class="btn btn-primary">Retweet</button>
         </div>
 

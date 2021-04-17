@@ -2,7 +2,7 @@
 
   <require from="./components/tweet-header.html"></require>
   <require from="./components/comment/comment-view.html"></require>
-  <require from="./components/comment-field.html"></require>
+  <require from="./components/comment/comment-input.html"></require>
   <require from="./../../../resources/valueConverters/time-ago"></require>
 
   <div class="animated fadeIn mb-3">
@@ -16,18 +16,21 @@
       <div class="card-body pb-1">
         <span>${tweet.content}</span>
 
-        <div class="row">
+        <div if.bind="showActions"
+             class="row">
           <div class="col">
             <div class="row justify-content-end pt-1">
 
-              <img class="btn btn-sm btn-circle btn-outline-secondary ${isCommenting ? 'active' : ''}"
-                   click.delegate="commentClicked({ event: $event, data: $this.$parent })"
+              <img class="btn btn-sm btn-circle btn-outline-secondary"
+                   data-toggle="modal"
+                   data-target="#comment-modal"
+                   click.delegate="selectedTweet = tweet"
                    src="../../../static/svg/comment-dots-regular.svg">
 
               <img class="btn btn-sm btn-circle btn-outline-secondary ml-2"
                    data-toggle="modal"
                    data-target="#retweet-modal"
-                   click.delegate="retweetClicked({ event: $event, tweet: $this.$parent })"
+                   click.delegate="selectedTweet = tweet"
                    src="../../../static/svg/retweet-solid.svg">
 
               <img class="btn btn-sm btn-circle btn-outline-secondary ml-2 ${liked ? 'active' : ''}"
@@ -42,15 +45,10 @@
     </div>
 
     <div id="tweet-comments">
-      <comment-view repeat.for="comment of tweet.comments"
+      <comment-view if.bind="showComments"
+                    repeat.for="comment of tweet.comments"
                     comment.bind="comment"></comment-view>
     </div>
-
-    <comment-field ref="commentField"
-                   if.bind="isCommenting"
-                   author.bind="tweet.author"
-                   submit-comment.call="submitComment(event, content)">
-    </comment-field>
 
   </div>
 

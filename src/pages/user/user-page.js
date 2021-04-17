@@ -7,49 +7,37 @@ import { SharedState } from '../../shared/shared-state';
 export class UserPage {
 
   @bindable user;
-  retweet;
+  selectedTweet;
   tweets;
 
   constructor(userService, sharedState, mockService) {
-
     this.userService = userService;
     this.mockService = mockService;
 
-    const user = mockService.generateUser()
-    this.user = this.userService.createUser(...Object.values(user));
-
-    let comments = this.populateComments()
-
-    let tweet = this.userService.createTweet(this.user, mockService.generateTweet(), comments);
-
+    const me = mockService.getUser();
+    sharedState.user = me;
+    this.user = me;
+    const content = mockService.getSentences();
+    const comments = mockService.getComments();
+    const tweet = this.userService.createTweet(me, content, comments);
     this.tweets = [tweet];
-    sharedState.user = this.user;
   }
 
   attached() {
+    this.autogenerateTweets();
+  }
+
+  autogenerateTweets() {
     setInterval(() => {
-      this.populateTweets()
-    }, 1.2E4);
+      const tweet = this.mockService.getTweet();
+      this.tweets.unshift(tweet);
+    }, 10000);
   }
 
-  populateTweets() {
-    let comments = this.populateComments()
-
-    let tweet = this.userService.createTweet(this.user,
-      this.mockService.generateTweet(), comments)
-
-    this.tweets.unshift(tweet)
-  }
-
-  populateComments() {
-
-    const createComment = () => {
-      let { author, content } = this.mockService.generateComment()
-      author = this.userService.createUser(...Object.values(author))
-      return this.userService.createComment(author, content)
-    }
-
-    return [createComment(), createComment(), createComment()];
+  commentSubmitted(event, content) {
+    let comment = this.userService.createComment(this.user, content);
+    this.selectedTweet.comments.push(comment);
+    document.getElementById("comment-input").value = "";
   }
 
 }
