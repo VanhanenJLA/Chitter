@@ -4,7 +4,7 @@ export class ThemeSelect {
     themes = [
         {
             title: "Default",
-            url: "./../../static/bootstrap.min.css"
+            url: "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         },
         {
             title: "Cerulean",
