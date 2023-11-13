@@ -44,7 +44,7 @@ export class MockService {
     const lastName = this.getLastName()
     const handle = this.getHandle()
     const bio = this.getBio()
-    const picture = "https://www.thispersondoesnotexist.com/image";
+    const picture = "https://www.thispersondoesnotexist.com";
     const pictures = new Array(8).fill(picture)
     return this.userService.createUser(firstName, lastName, handle, bio, pictures)
   }
